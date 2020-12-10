@@ -12,7 +12,6 @@
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
 		52AA347B258264E700A61F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347A258264E700A61F23 /* Assets.xcassets */; };
 		52AA347E258264E700A61F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347C258264E700A61F23 /* LaunchScreen.storyboard */; };
-		52AA3489258264E800A61F23 /* EJUnsplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3488258264E800A61F23 /* EJUnsplashTests.swift */; };
 		52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */; };
 		52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34BC2582689300A61F23 /* MainViewController+Test.swift */; };
 		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
@@ -38,7 +37,6 @@
 		52AA347D258264E700A61F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AA347F258264E700A61F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA3484258264E800A61F23 /* EJUnsplashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EJUnsplashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52AA3488258264E800A61F23 /* EJUnsplashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EJUnsplashTests.swift; sourceTree = "<group>"; };
 		52AA348A258264E800A61F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		52AA34BC2582689300A61F23 /* MainViewController+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Test.swift"; sourceTree = "<group>"; };
@@ -64,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52562B1725828E83006FF4CA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		52AA3465258264E300A61F23 = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +107,8 @@
 			children = (
 				52AA34C82582757700A61F23 /* Contollers */,
 				52AA34CB25827C6C00A61F23 /* Views */,
-				52AA3488258264E800A61F23 /* EJUnsplashTests.swift */,
+				52562B1725828E83006FF4CA /* Helpers */,
 				52AA348A258264E800A61F23 /* Info.plist */,
-				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
 			);
 			path = EJUnsplashTests;
 			sourceTree = "<group>";
@@ -252,7 +257,6 @@
 			files = (
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
-				52AA3489258264E800A61F23 /* EJUnsplashTests.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
