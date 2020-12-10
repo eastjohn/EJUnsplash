@@ -16,6 +16,7 @@
 		52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */; };
 		52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34BC2582689300A61F23 /* MainViewController+Test.swift */; };
 		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
+		52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		52AA34BC2582689300A61F23 /* MainViewController+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Test.swift"; sourceTree = "<group>"; };
 		52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
+		52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				52AA34C82582757700A61F23 /* Contollers */,
+				52AA34CB25827C6C00A61F23 /* Views */,
 				52AA3488258264E800A61F23 /* EJUnsplashTests.swift */,
 				52AA348A258264E800A61F23 /* Info.plist */,
 				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
@@ -127,6 +130,14 @@
 				52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */,
 			);
 			path = Contollers;
+			sourceTree = "<group>";
+		};
+		52AA34CB25827C6C00A61F23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
 				52AA3489258264E800A61F23 /* EJUnsplashTests.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,

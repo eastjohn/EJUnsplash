@@ -36,12 +36,10 @@ extension MainViewController: UITableViewDataSource {
 
 
 extension MainViewController: UITableViewDelegate {
-    static let stickyHeaderViewMinHeight = CGFloat(90)
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var heightConstraint = -scrollView.contentOffset.y
-        if heightConstraint < 90 {
-            heightConstraint = 90
+        if heightConstraint < StickyHeaderView.MinHeight {
+            heightConstraint = StickyHeaderView.MinHeight
         }
         stickHeaderViewHeightConstraint.constant = heightConstraint
     }

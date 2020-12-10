@@ -92,6 +92,6 @@ class MainViewControllerTests: XCTestCase {
         
         mainViewController.scrollViewDidScroll(scrollView)
         
-        XCTAssertEqual(mainViewController.stickHeaderViewHeightConstraint.constant, MainViewController.stickyHeaderViewMinHeight)
+        XCTAssertEqual(mainViewController.stickHeaderViewHeightConstraint.constant, StickyHeaderView.MinHeight)
     }
 }

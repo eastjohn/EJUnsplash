@@ -27,10 +27,22 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6P-Mf-w8R" customClass="StickyHeaderView" customModule="EJUnsplash" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="heB-IF-nwG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="heB-IF-nwG" firstAttribute="leading" secondItem="C6P-Mf-w8R" secondAttribute="leading" id="goE-nx-wp9"/>
                                     <constraint firstAttribute="height" constant="300" id="gvl-2B-0Wg"/>
+                                    <constraint firstAttribute="trailing" secondItem="heB-IF-nwG" secondAttribute="trailing" id="i3L-7j-etw"/>
+                                    <constraint firstAttribute="bottom" secondItem="heB-IF-nwG" secondAttribute="bottom" id="wSP-Qo-FlU"/>
+                                    <constraint firstItem="heB-IF-nwG" firstAttribute="top" secondItem="C6P-Mf-w8R" secondAttribute="top" id="ybP-kB-Ho0"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="heB-IF-nwG" id="VVE-Wy-onB"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,7 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stickHeaderViewHeightConstraint" destination="gvl-2B-0Wg" id="HW3-WQ-elH"/>
+                        <outlet property="stickHeaderViewHeightConstraint" destination="gvl-2B-0Wg" id="LES-Ik-ZWl"/>
                         <outlet property="stickyHeaderView" destination="C6P-Mf-w8R" id="QHa-xC-fwk"/>
                         <outlet property="tableView" destination="jEE-Bh-XMX" id="h6W-gy-rk7"/>
                     </connections>

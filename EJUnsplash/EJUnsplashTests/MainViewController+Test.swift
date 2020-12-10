@@ -16,4 +16,11 @@ extension MainViewController {
         return UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(identifier: storyboardID) as! MainViewController
     }
+    
+    
+    static func createStickyHeaderView() -> StickyHeaderView {
+        let viewController = createViewController()
+        viewController.loadView()
+        return viewController.stickyHeaderView
+    }
 }
