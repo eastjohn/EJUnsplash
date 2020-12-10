@@ -29,6 +29,20 @@ class StickyHeaderViewTests: XCTestCase {
     }
     
     
+    func testLoadView_ThenSearchBarIsNotNil() {
+        XCTAssertNotNil(sut.searchBar)
+    }
+    
+    
+    func testSetSearchBar_ThenSearchBarBackgroundImageIsEmptyImage() {
+        let searchBar = UISearchBar()
+        
+        sut.searchBar = searchBar
+        
+        XCTAssertEqual(searchBar.backgroundImage, UIImage())
+    }
+    
+    
     func testLayoutSubviews_WhenHeghitIsMaxHeight_ThenBackgroundImageViewAlphaIs1() {
         sut.frame.size.height = StickyHeaderView.MaxHeight
         

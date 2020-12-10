@@ -61,6 +61,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="heB-IF-nwG" id="VVE-Wy-onB"/>
+                                    <outlet property="searchBar" destination="Obm-Cs-y3o" id="RzP-6J-eY2"/>
                                 </connections>
                             </view>
                         </subviews>

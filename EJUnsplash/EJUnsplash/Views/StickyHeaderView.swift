@@ -12,6 +12,11 @@ class StickyHeaderView: UIView {
     static let MinHeight = CGFloat(96)
     
     @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var searchBar: UISearchBar! {
+        didSet {
+            searchBar.backgroundImage = UIImage()
+        }
+    }
     
     
     override func layoutSubviews() {
