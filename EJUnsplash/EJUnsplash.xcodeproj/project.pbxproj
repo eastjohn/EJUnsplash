@@ -13,6 +13,9 @@
 		52AA347B258264E700A61F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347A258264E700A61F23 /* Assets.xcassets */; };
 		52AA347E258264E700A61F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347C258264E700A61F23 /* LaunchScreen.storyboard */; };
 		52AA3489258264E800A61F23 /* EJUnsplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3488258264E800A61F23 /* EJUnsplashTests.swift */; };
+		52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */; };
+		52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34BC2582689300A61F23 /* MainViewController+Test.swift */; };
+		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		52AA3484258264E800A61F23 /* EJUnsplashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EJUnsplashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3488258264E800A61F23 /* EJUnsplashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EJUnsplashTests.swift; sourceTree = "<group>"; };
 		52AA348A258264E800A61F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		52AA34BC2582689300A61F23 /* MainViewController+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Test.swift"; sourceTree = "<group>"; };
+		52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,9 @@
 		52AA3470258264E300A61F23 /* EJUnsplash */ = {
 			isa = PBXGroup;
 			children = (
+				52AA34C72582755B00A61F23 /* Controllers */,
+				52AA34C025826F0500A61F23 /* Views */,
 				52AA3471258264E300A61F23 /* AppDelegate.swift */,
-				52AA3475258264E300A61F23 /* MainViewController.swift */,
 				52AA3477258264E300A61F23 /* Main.storyboard */,
 				52AA347A258264E700A61F23 /* Assets.xcassets */,
 				52AA347C258264E700A61F23 /* LaunchScreen.storyboard */,
@@ -90,10 +97,36 @@
 		52AA3487258264E800A61F23 /* EJUnsplashTests */ = {
 			isa = PBXGroup;
 			children = (
+				52AA34C82582757700A61F23 /* Contollers */,
 				52AA3488258264E800A61F23 /* EJUnsplashTests.swift */,
 				52AA348A258264E800A61F23 /* Info.plist */,
+				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
 			);
 			path = EJUnsplashTests;
+			sourceTree = "<group>";
+		};
+		52AA34C025826F0500A61F23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		52AA34C72582755B00A61F23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52AA3475258264E300A61F23 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52AA34C82582757700A61F23 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */,
+			);
+			path = Contollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
+				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
 				52AA3489258264E800A61F23 /* EJUnsplashTests.swift in Sources */,
+				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

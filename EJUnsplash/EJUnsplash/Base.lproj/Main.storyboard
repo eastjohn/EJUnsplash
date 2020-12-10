@@ -12,17 +12,48 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="EJUnsplash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="EJUnsplash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jEE-Bh-XMX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qt6-Va-CKo"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jmt-J8-KCU"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6P-Mf-w8R" customClass="StickyHeaderView" customModule="EJUnsplash" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="gvl-2B-0Wg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jEE-Bh-XMX" secondAttribute="bottom" id="CoR-Us-ucA"/>
+                            <constraint firstItem="C6P-Mf-w8R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DzM-Sp-SmC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C6P-Mf-w8R" secondAttribute="trailing" id="Phq-bO-hsm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jEE-Bh-XMX" secondAttribute="trailing" id="S7E-B0-cbM"/>
+                            <constraint firstItem="jEE-Bh-XMX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vfc-xC-Cge"/>
+                            <constraint firstItem="jEE-Bh-XMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZJy-tp-WVR"/>
+                            <constraint firstItem="C6P-Mf-w8R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="feL-Kp-lIc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stickHeaderViewHeightConstraint" destination="gvl-2B-0Wg" id="HW3-WQ-elH"/>
+                        <outlet property="stickyHeaderView" destination="C6P-Mf-w8R" id="QHa-xC-fwk"/>
+                        <outlet property="tableView" destination="jEE-Bh-XMX" id="h6W-gy-rk7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="39"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="38.839285714285715"/>
         </scene>
     </scenes>
     <resources>
