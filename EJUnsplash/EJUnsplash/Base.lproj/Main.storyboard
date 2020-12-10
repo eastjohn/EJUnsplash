@@ -31,13 +31,32 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="heB-IF-nwG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     </imageView>
+                                    <searchBar contentMode="redraw" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Obm-Cs-y3o">
+                                        <rect key="frame" x="8" y="162" width="398" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos for everyone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-qL-OPB">
+                                        <rect key="frame" x="8" y="116" width="398" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Obm-Cs-y3o" firstAttribute="centerX" secondItem="C6P-Mf-w8R" secondAttribute="centerX" id="7bA-5d-MrT"/>
+                                    <constraint firstItem="Obm-Cs-y3o" firstAttribute="top" secondItem="Idh-qL-OPB" secondAttribute="bottom" constant="5" id="Bfz-xo-vLR"/>
+                                    <constraint firstItem="Obm-Cs-y3o" firstAttribute="leading" secondItem="C6P-Mf-w8R" secondAttribute="leadingMargin" id="csc-Y4-qug"/>
                                     <constraint firstItem="heB-IF-nwG" firstAttribute="leading" secondItem="C6P-Mf-w8R" secondAttribute="leading" id="goE-nx-wp9"/>
                                     <constraint firstAttribute="height" constant="300" id="gvl-2B-0Wg"/>
+                                    <constraint firstItem="Idh-qL-OPB" firstAttribute="leading" secondItem="C6P-Mf-w8R" secondAttribute="leadingMargin" id="h70-E4-jCR"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Obm-Cs-y3o" secondAttribute="bottom" constant="8" id="hzO-oZ-yCH"/>
                                     <constraint firstAttribute="trailing" secondItem="heB-IF-nwG" secondAttribute="trailing" id="i3L-7j-etw"/>
+                                    <constraint firstItem="Obm-Cs-y3o" firstAttribute="centerY" secondItem="C6P-Mf-w8R" secondAttribute="centerY" priority="995" constant="40" id="jHC-GL-sym"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Idh-qL-OPB" secondAttribute="trailing" id="lpe-VS-UsE"/>
+                                    <constraint firstItem="Idh-qL-OPB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="C6P-Mf-w8R" secondAttribute="top" constant="32" id="w8y-Cf-8hZ"/>
                                     <constraint firstAttribute="bottom" secondItem="heB-IF-nwG" secondAttribute="bottom" id="wSP-Qo-FlU"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Obm-Cs-y3o" secondAttribute="trailing" id="xKo-Rp-iQl"/>
                                     <constraint firstItem="heB-IF-nwG" firstAttribute="top" secondItem="C6P-Mf-w8R" secondAttribute="top" id="ybP-kB-Ho0"/>
                                 </constraints>
                                 <connections>

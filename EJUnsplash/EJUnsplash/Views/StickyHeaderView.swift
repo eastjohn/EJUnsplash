@@ -9,7 +9,7 @@ import UIKit
 
 class StickyHeaderView: UIView {
     static let MaxHeight = CGFloat(300)
-    static let MinHeight = CGFloat(90)
+    static let MinHeight = CGFloat(96)
     
     @IBOutlet var backgroundImageView: UIImageView!
     
