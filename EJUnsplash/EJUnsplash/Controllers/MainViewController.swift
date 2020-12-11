@@ -18,18 +18,28 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUIs()
+        configureViewModel()
+    }
+    
+    private func configureUIs() {
         tableView.contentInset = UIEdgeInsets(top: stickHeaderViewHeightConstraint.constant, left: 0, bottom: 0, right: 0)
-        
+    }
+    
+    private func configureViewModel() {
         viewModel.bindPhotoDatas { [weak self] range in
-            if range.startIndex == 0 {
-                self?.tableView.reloadData()
-            } else {
-                self?.tableView.insertRows(at: range.map { IndexPath(row: $0, section: 0) }, with: .none)
-            }
+            self?.updateTableView(range: range)
         }
         viewModel.fetchDatas()
     }
 
+    private func updateTableView(range: Range<Int>) {
+        if range.startIndex == 0 {
+            tableView.reloadData()
+        } else {
+            tableView.insertRows(at: range.map { IndexPath(row: $0, section: 0) }, with: .none)
+        }
+    }
 
 }
 
@@ -56,7 +66,12 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var heightConstraint = -scrollView.contentOffset.y
+        updateStickyHeaderViewHeightConstraintByScrollViewYOffset(contentYOffset: scrollView.contentOffset.y)
+    }
+    
+    
+    private func updateStickyHeaderViewHeightConstraintByScrollViewYOffset(contentYOffset: CGFloat) {
+        var heightConstraint = -contentYOffset
         if heightConstraint < StickyHeaderView.MinHeight {
             heightConstraint = StickyHeaderView.MinHeight
         }
