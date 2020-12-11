@@ -10,8 +10,8 @@ import UIKit
 class ListViewCell: UITableViewCell {
     static let Identifier = "ListViewCell"
 
-    @IBOutlet var photoImageView: UIImageView!
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var photoImage: UIImage? {
         get {

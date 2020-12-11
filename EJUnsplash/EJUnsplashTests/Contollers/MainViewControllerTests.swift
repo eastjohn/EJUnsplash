@@ -182,7 +182,8 @@ class MainViewControllerTests: XCTestCase {
             sut = MainViewController()
             givenHasViewModelSub()
             sut.tableView = tableView
-            sut.stickHeaderViewHeightConstraint = NSLayoutConstraint()
+            let consraint = NSLayoutConstraint()
+            sut.stickHeaderViewHeightConstraint = consraint
             sut.viewDidLoad()
             
             sut = nil

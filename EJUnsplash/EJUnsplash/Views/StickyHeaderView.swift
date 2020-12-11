@@ -11,12 +11,12 @@ class StickyHeaderView: UIView {
     static let MaxHeight = CGFloat(300)
     static let MinHeight = CGFloat(96)
     
-    @IBOutlet var backgroundImageView: UIImageView! {
+    @IBOutlet weak var backgroundImageView: UIImageView! {
         didSet {
             viewModel.bindBackgroundImage { [weak self] in self?.backgroundImageView.image = $0 }
         }
     }
-    @IBOutlet var searchBar: UISearchBar! {
+    @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.backgroundImage = UIImage()
         }

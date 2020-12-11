@@ -9,9 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var stickyHeaderView: StickyHeaderView!
-    @IBOutlet var stickHeaderViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var stickyHeaderView: StickyHeaderView!
+    @IBOutlet weak var stickHeaderViewHeightConstraint: NSLayoutConstraint!
     
     var viewModel: IListViewModel = ListViewModel()
     
