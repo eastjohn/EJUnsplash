@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var stickyHeaderView: StickyHeaderView!
     @IBOutlet weak var stickHeaderViewHeightConstraint: NSLayoutConstraint!
     
-    var viewModel: IListViewModel = ListViewModel()
+    var viewModel: IListViewModel = ListViewModel(service: UnsplashListService())
     
     override func viewDidLoad() {
         super.viewDidLoad()

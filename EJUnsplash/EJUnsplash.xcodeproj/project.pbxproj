@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B1C2583A9D1006FF4CA /* ListViewModelTests.swift */; };
+		52562B242583B2BE006FF4CA /* UnsplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B232583B2BE006FF4CA /* UnsplashService.swift */; };
+		52562B2A2583B344006FF4CA /* UnsplashListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B292583B344006FF4CA /* UnsplashListService.swift */; };
+		52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */; };
+		52562B322583D57C006FF4CA /* ImageLoadOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B312583D57C006FF4CA /* ImageLoadOperator.swift */; };
+		52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -37,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52562B1C2583A9D1006FF4CA /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		52562B232583B2BE006FF4CA /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
+		52562B292583B344006FF4CA /* UnsplashListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashListService.swift; sourceTree = "<group>"; };
+		52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashServiceStub.swift; sourceTree = "<group>"; };
+		52562B312583D57C006FF4CA /* ImageLoadOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperator.swift; sourceTree = "<group>"; };
+		52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperatorTests.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +98,32 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		52562B1B2583A9A2006FF4CA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				52562B1C2583A9D1006FF4CA /* ListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		52562B222583B29D006FF4CA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				52562B232583B2BE006FF4CA /* UnsplashService.swift */,
+				52562B292583B344006FF4CA /* UnsplashListService.swift */,
+				52562B312583D57C006FF4CA /* ImageLoadOperator.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		52562B352583D775006FF4CA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		52AA3465258264E300A61F23 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +149,7 @@
 				52AA34C72582755B00A61F23 /* Controllers */,
 				52AA34C025826F0500A61F23 /* Views */,
 				52CD567A2582FBBA00DA6387 /* ViewModels */,
+				52562B222583B29D006FF4CA /* Service */,
 				52AA3471258264E300A61F23 /* AppDelegate.swift */,
 				52AA3477258264E300A61F23 /* Main.storyboard */,
 				52AA347A258264E700A61F23 /* Assets.xcassets */,
@@ -125,6 +164,8 @@
 			children = (
 				52AA34C82582757700A61F23 /* Contollers */,
 				52AA34CB25827C6C00A61F23 /* Views */,
+				52562B1B2583A9A2006FF4CA /* ViewModels */,
+				52562B352583D775006FF4CA /* Service */,
 				52CD567F2583013500DA6387 /* Mock */,
 				52562B1725828E83006FF4CA /* Helpers */,
 				52AA348A258264E800A61F23 /* Info.plist */,
@@ -181,6 +222,7 @@
 				52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */,
 				52CD568C2583145200DA6387 /* ListViewModelStub.swift */,
 				52CD569025831CFD00DA6387 /* MockTableView.swift */,
+				52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -294,12 +336,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CD569A258332ED00DA6387 /* PhotoInfo.swift in Sources */,
+				52562B322583D57C006FF4CA /* ImageLoadOperator.swift in Sources */,
 				52CD5689258312AA00DA6387 /* ListViewModel.swift in Sources */,
+				52562B2A2583B344006FF4CA /* UnsplashListService.swift in Sources */,
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
+				52562B242583B2BE006FF4CA /* UnsplashService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +356,12 @@
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
+				52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
+				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,
+				52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -115,6 +115,7 @@ class MainViewControllerTests: XCTestCase {
     
     func testConfirmViewModel_WhenCreated() {
         XCTAssertTrue(sut.viewModel is ListViewModel)
+        XCTAssertTrue((sut.viewModel as! ListViewModel).unsplashService is UnsplashListService)
     }
     
     
@@ -203,6 +204,7 @@ class MainViewControllerTests: XCTestCase {
     
     
     func testTableViewCellForRowAt_ThenReturnListViewCell() {
+        givenHasViewModelSub()
         let tableView = MockTableView()
         let expectedIndexPath = IndexPath(row: 0, section: 0)
         

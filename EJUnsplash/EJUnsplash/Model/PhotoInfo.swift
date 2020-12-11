@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoInfo {
+struct PhotoInfo: Equatable {
     let name: String
     let url: URL?
 }
