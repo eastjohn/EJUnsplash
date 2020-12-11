@@ -30,6 +30,7 @@ class StickyHeaderViewTests: XCTestCase {
     }
     
 
+    // MARK: - Tests
     func testCreateView() throws {
         XCTAssertNotNil(sut)
     }

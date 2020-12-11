@@ -18,6 +18,13 @@
 		52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */; };
 		52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */; };
 		52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */; };
+		52CD5689258312AA00DA6387 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5688258312AA00DA6387 /* ListViewModel.swift */; };
+		52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD568C2583145200DA6387 /* ListViewModelStub.swift */; };
+		52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD569025831CFD00DA6387 /* MockTableView.swift */; };
+		52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD569425831ED200DA6387 /* ListViewCell.swift */; };
+		52CD569A258332ED00DA6387 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5699258332ED00DA6387 /* PhotoInfo.swift */; };
+		52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD569F2583342100DA6387 /* ListViewCellTests.swift */; };
+		52CD56A42583352000DA6387 /* UICreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56A32583352000DA6387 /* UICreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,13 @@
 		52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewTests.swift; sourceTree = "<group>"; };
 		52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModel.swift; sourceTree = "<group>"; };
 		52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModelStub.swift; sourceTree = "<group>"; };
+		52CD5688258312AA00DA6387 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		52CD568C2583145200DA6387 /* ListViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelStub.swift; sourceTree = "<group>"; };
+		52CD569025831CFD00DA6387 /* MockTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
+		52CD569425831ED200DA6387 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		52CD5699258332ED00DA6387 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
+		52CD569F2583342100DA6387 /* ListViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCellTests.swift; sourceTree = "<group>"; };
+		52CD56A32583352000DA6387 /* UICreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
+				52CD56A32583352000DA6387 /* UICreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -95,6 +110,7 @@
 		52AA3470258264E300A61F23 /* EJUnsplash */ = {
 			isa = PBXGroup;
 			children = (
+				52CD5698258332D700DA6387 /* Model */,
 				52AA34C72582755B00A61F23 /* Controllers */,
 				52AA34C025826F0500A61F23 /* Views */,
 				52CD567A2582FBBA00DA6387 /* ViewModels */,
@@ -123,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */,
+				52CD569425831ED200DA6387 /* ListViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */,
+				52CD569F2583342100DA6387 /* ListViewCellTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */,
+				52CD5688258312AA00DA6387 /* ListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -163,8 +182,18 @@
 			isa = PBXGroup;
 			children = (
 				52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */,
+				52CD568C2583145200DA6387 /* ListViewModelStub.swift */,
+				52CD569025831CFD00DA6387 /* MockTableView.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		52CD5698258332D700DA6387 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52CD5699258332ED00DA6387 /* PhotoInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CD569A258332ED00DA6387 /* PhotoInfo.swift in Sources */,
+				52CD5689258312AA00DA6387 /* ListViewModel.swift in Sources */,
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
+				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,10 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
+				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
 				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
+				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
+				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
