@@ -13,7 +13,6 @@
 		52AA347B258264E700A61F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347A258264E700A61F23 /* Assets.xcassets */; };
 		52AA347E258264E700A61F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA347C258264E700A61F23 /* LaunchScreen.storyboard */; };
 		52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */; };
-		52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34BC2582689300A61F23 /* MainViewController+Test.swift */; };
 		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
 		52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */; };
 		52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */; };
@@ -48,7 +47,6 @@
 		52AA3484258264E800A61F23 /* EJUnsplashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EJUnsplashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA348A258264E800A61F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
-		52AA34BC2582689300A61F23 /* MainViewController+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Test.swift"; sourceTree = "<group>"; };
 		52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewTests.swift; sourceTree = "<group>"; };
 		52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		52562B1725828E83006FF4CA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				52AA34BC2582689300A61F23 /* MainViewController+Test.swift */,
 				52CD56A32583352000DA6387 /* UICreator.swift */,
 			);
 			path = Helpers;
@@ -313,7 +310,6 @@
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
-				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,

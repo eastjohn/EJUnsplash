@@ -13,7 +13,7 @@ class StickyHeaderViewTests: XCTestCase {
     private var viewModelStub: StickyHeaderViewModelStub!
     
     override func setUpWithError() throws {
-        sut = MainViewController.createStickyHeaderView()
+        sut = UICreator.createStickyHeaderView()
         viewModelStub = StickyHeaderViewModelStub()
     }
 

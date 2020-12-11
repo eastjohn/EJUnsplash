@@ -13,7 +13,7 @@ class MainViewControllerTests: XCTestCase {
     private var viewModelStub: ListViewModelStub!
     
     override func setUpWithError() throws {
-        sut = MainViewController.createViewController()
+        sut = UICreator.createMainViewController()
         viewModelStub = ListViewModelStub()
     }
 
