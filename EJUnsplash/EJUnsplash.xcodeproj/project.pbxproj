@@ -16,6 +16,8 @@
 		52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34BC2582689300A61F23 /* MainViewController+Test.swift */; };
 		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
 		52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */; };
+		52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */; };
+		52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		52AA34BC2582689300A61F23 /* MainViewController+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Test.swift"; sourceTree = "<group>"; };
 		52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewTests.swift; sourceTree = "<group>"; };
+		52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModel.swift; sourceTree = "<group>"; };
+		52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModelStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			children = (
 				52AA34C72582755B00A61F23 /* Controllers */,
 				52AA34C025826F0500A61F23 /* Views */,
+				52CD567A2582FBBA00DA6387 /* ViewModels */,
 				52AA3471258264E300A61F23 /* AppDelegate.swift */,
 				52AA3477258264E300A61F23 /* Main.storyboard */,
 				52AA347A258264E700A61F23 /* Assets.xcassets */,
@@ -107,6 +112,7 @@
 			children = (
 				52AA34C82582757700A61F23 /* Contollers */,
 				52AA34CB25827C6C00A61F23 /* Views */,
+				52CD567F2583013500DA6387 /* Mock */,
 				52562B1725828E83006FF4CA /* Helpers */,
 				52AA348A258264E800A61F23 /* Info.plist */,
 			);
@@ -143,6 +149,22 @@
 				52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		52CD567A2582FBBA00DA6387 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		52CD567F2583013500DA6387 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +269,7 @@
 			files = (
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
+				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +280,7 @@
 			files = (
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52AA34BD2582689300A61F23 /* MainViewController+Test.swift in Sources */,
+				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

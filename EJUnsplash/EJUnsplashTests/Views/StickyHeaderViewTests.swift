@@ -10,14 +10,25 @@ import XCTest
 
 class StickyHeaderViewTests: XCTestCase {
     private var sut: StickyHeaderView!
+    private var viewModelStub: StickyHeaderViewModelStub!
     
     override func setUpWithError() throws {
         sut = MainViewController.createStickyHeaderView()
+        viewModelStub = StickyHeaderViewModelStub()
     }
 
     override func tearDownWithError() throws {
         sut = nil
+        viewModelStub = nil
     }
+    
+    
+    // MARK: - Given
+    func givenViewModelStub() {
+        sut = StickyHeaderView()
+        sut.viewModel = viewModelStub
+    }
+    
 
     func testCreateView() throws {
         XCTAssertNotNil(sut)
@@ -69,5 +80,37 @@ class StickyHeaderViewTests: XCTestCase {
         
         
         XCTAssertEqual(sut.backgroundImageView.alpha, 0)
+    }
+    
+    
+    func testExistViewModel_WhenCreated() {
+        XCTAssertTrue(sut.viewModel is StickyHeaderViewModel)
+    }
+    
+    
+    func testSetBackgroundImageView_ThenBindViewModel() {
+        let expectedImage = UIImage()
+        let imageView = UIImageView()
+        givenViewModelStub()
+
+
+        sut.backgroundImageView = imageView
+        viewModelStub.updateImage(expectedImage)
+
+
+        XCTAssertEqual(imageView.image, expectedImage)
+    }
+    
+    
+    func testBind_WhenSutIsNil_ThenNotRetainCycle() {
+        givenViewModelStub()
+        let imageView = UIImageView()
+        sut.backgroundImageView = imageView
+        
+        sut = nil
+        viewModelStub.updateImage(UIImage())
+        
+        
+        XCTAssertNil(imageView.image)
     }
 }

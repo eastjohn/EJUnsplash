@@ -11,16 +11,26 @@ class StickyHeaderView: UIView {
     static let MaxHeight = CGFloat(300)
     static let MinHeight = CGFloat(96)
     
-    @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var backgroundImageView: UIImageView! {
+        didSet {
+            viewModel.bindBackgroundImage { [weak self] in self?.backgroundImageView.image = $0 }
+        }
+    }
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
             searchBar.backgroundImage = UIImage()
         }
     }
     
+    var viewModel: IStickyHeaderViewModel = StickyHeaderViewModel()
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundImageView.alpha = (bounds.height - StickyHeaderView.MinHeight) / (StickyHeaderView.MaxHeight - StickyHeaderView.MinHeight)
+        backgroundImageView.alpha = calculateAlphaByHeightRatio()
+    }
+    
+    private func calculateAlphaByHeightRatio() -> CGFloat {
+        return (bounds.height - StickyHeaderView.MinHeight) / (StickyHeaderView.MaxHeight - StickyHeaderView.MinHeight)
     }
 }
