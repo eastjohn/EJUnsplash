@@ -2,7 +2,7 @@
 //  ListViewCellTests.swift
 //  EJUnsplashTests
 //
-//  Created by 김요한 on 2020/12/11.
+//  Created by John on 2020/12/11.
 //
 
 import XCTest
