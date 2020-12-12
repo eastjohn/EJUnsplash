@@ -36,12 +36,12 @@ class ListViewModel: IListViewModel {
     init(service: UnsplashService) {
         unsplashService = service
         unsplashService.addBindingUpdateDatas { [weak self] photoInfos in
-            self?.recievePhotoDatas(photoInfos: photoInfos)
+            self?.receivePhotoDatas(photoInfos: photoInfos)
         }
     }
     
     
-    func recievePhotoDatas(photoInfos: [PhotoInfo]) {
+    func receivePhotoDatas(photoInfos: [PhotoInfo]) {
         let startIndex = photoDatas.count
         photoDatas.append(contentsOf: photoInfos)
         updatePhotoDatasHandler?(startIndex..<(photoInfos.count + startIndex))

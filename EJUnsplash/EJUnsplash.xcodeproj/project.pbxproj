@@ -13,6 +13,17 @@
 		52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */; };
 		52562B322583D57C006FF4CA /* ImageLoadOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B312583D57C006FF4CA /* ImageLoadOperator.swift */; };
 		52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */; };
+		52562B3D258499FE006FF4CA /* UnsplashListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */; };
+		52562B412584A3B9006FF4CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B402584A3B9006FF4CA /* NetworkManager.swift */; };
+		52562B452584A4B0006FF4CA /* NetworkManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B442584A4B0006FF4CA /* NetworkManagerStub.swift */; };
+		52562B492584A57E006FF4CA /* UnsplashRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B482584A57E006FF4CA /* UnsplashRequest.swift */; };
+		52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B4C2584A694006FF4CA /* UnsplashAPI.swift */; };
+		52562B5225850537006FF4CA /* page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B5125850537006FF4CA /* page1.json */; };
+		52562B582585059F006FF4CA /* page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B572585059F006FF4CA /* page2.json */; };
+		52562B5D2585075A006FF4CA /* page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B5C2585075A006FF4CA /* page3.json */; };
+		52562B6325850769006FF4CA /* page4.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B6225850769006FF4CA /* page4.json */; };
+		52562B672585077D006FF4CA /* page5.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B662585077D006FF4CA /* page5.json */; };
+		52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B6A2585095B006FF4CA /* JsonDataCreator.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -49,6 +60,17 @@
 		52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashServiceStub.swift; sourceTree = "<group>"; };
 		52562B312583D57C006FF4CA /* ImageLoadOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperator.swift; sourceTree = "<group>"; };
 		52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperatorTests.swift; sourceTree = "<group>"; };
+		52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashListServiceTests.swift; sourceTree = "<group>"; };
+		52562B402584A3B9006FF4CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52562B442584A4B0006FF4CA /* NetworkManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerStub.swift; sourceTree = "<group>"; };
+		52562B482584A57E006FF4CA /* UnsplashRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRequest.swift; sourceTree = "<group>"; };
+		52562B4C2584A694006FF4CA /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
+		52562B5125850537006FF4CA /* page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page1.json; sourceTree = "<group>"; };
+		52562B572585059F006FF4CA /* page2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page2.json; sourceTree = "<group>"; };
+		52562B5C2585075A006FF4CA /* page3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page3.json; sourceTree = "<group>"; };
+		52562B6225850769006FF4CA /* page4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page4.json; sourceTree = "<group>"; };
+		52562B662585077D006FF4CA /* page5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page5.json; sourceTree = "<group>"; };
+		52562B6A2585095B006FF4CA /* JsonDataCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataCreator.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD56A32583352000DA6387 /* UICreator.swift */,
+				52562B6A2585095B006FF4CA /* JsonDataCreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -112,6 +135,9 @@
 				52562B232583B2BE006FF4CA /* UnsplashService.swift */,
 				52562B292583B344006FF4CA /* UnsplashListService.swift */,
 				52562B312583D57C006FF4CA /* ImageLoadOperator.swift */,
+				52562B402584A3B9006FF4CA /* NetworkManager.swift */,
+				52562B482584A57E006FF4CA /* UnsplashRequest.swift */,
+				52562B4C2584A694006FF4CA /* UnsplashAPI.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -120,8 +146,21 @@
 			isa = PBXGroup;
 			children = (
 				52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */,
+				52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		52562B50258504F8006FF4CA /* JsonDatas */ = {
+			isa = PBXGroup;
+			children = (
+				52562B5125850537006FF4CA /* page1.json */,
+				52562B572585059F006FF4CA /* page2.json */,
+				52562B5C2585075A006FF4CA /* page3.json */,
+				52562B6225850769006FF4CA /* page4.json */,
+				52562B662585077D006FF4CA /* page5.json */,
+			);
+			path = JsonDatas;
 			sourceTree = "<group>";
 		};
 		52AA3465258264E300A61F23 = {
@@ -162,6 +201,7 @@
 		52AA3487258264E800A61F23 /* EJUnsplashTests */ = {
 			isa = PBXGroup;
 			children = (
+				52562B50258504F8006FF4CA /* JsonDatas */,
 				52AA34C82582757700A61F23 /* Contollers */,
 				52AA34CB25827C6C00A61F23 /* Views */,
 				52562B1B2583A9A2006FF4CA /* ViewModels */,
@@ -223,6 +263,7 @@
 				52CD568C2583145200DA6387 /* ListViewModelStub.swift */,
 				52CD569025831CFD00DA6387 /* MockTableView.swift */,
 				52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */,
+				52562B442584A4B0006FF4CA /* NetworkManagerStub.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -325,6 +366,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52562B672585077D006FF4CA /* page5.json in Resources */,
+				52562B5225850537006FF4CA /* page1.json in Resources */,
+				52562B5D2585075A006FF4CA /* page3.json in Resources */,
+				52562B582585059F006FF4CA /* page2.json in Resources */,
+				52562B6325850769006FF4CA /* page4.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,12 +385,15 @@
 				52562B322583D57C006FF4CA /* ImageLoadOperator.swift in Sources */,
 				52CD5689258312AA00DA6387 /* ListViewModel.swift in Sources */,
 				52562B2A2583B344006FF4CA /* UnsplashListService.swift in Sources */,
+				52562B412584A3B9006FF4CA /* NetworkManager.swift in Sources */,
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
+				52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 				52562B242583B2BE006FF4CA /* UnsplashService.swift in Sources */,
+				52562B492584A57E006FF4CA /* UnsplashRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +403,14 @@
 			files = (
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
+				52562B452584A4B0006FF4CA /* NetworkManagerStub.swift in Sources */,
 				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
+				52562B3D258499FE006FF4CA /* UnsplashListServiceTests.swift in Sources */,
 				52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
+				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,
 				52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */,
