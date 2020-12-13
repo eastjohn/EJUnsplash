@@ -25,7 +25,8 @@ class PageViewController: UIPageViewController {
         
         dataSource = self
         
-        guard let detailViewController = DetailViewController.createFromStoryboard(url: viewModel.urlAt(selectedIndex), index: selectedIndex) else { return }
+        guard let photoInfo = viewModel.urlAt(selectedIndex),
+              let detailViewController = DetailViewController.createFromStoryboard(photoInfo:photoInfo, index: selectedIndex) else { return }
         setViewControllers([detailViewController], direction: .forward, animated: false, completion: nil)
     }
     
@@ -61,8 +62,8 @@ extension PageViewController: UIPageViewControllerDataSource {
     private func getDetailViewController(viewController: UIViewController, increaseIndex: Int) -> DetailViewController? {
         guard let detailViewController = viewController as? DetailViewController else { return nil }
         let nextIndex = detailViewController.index + increaseIndex
-        guard let url = viewModel.urlAt(nextIndex) else { return nil }
-        return DetailViewController.createFromStoryboard(url: url, index: nextIndex)
+        guard let photoInfo = viewModel.urlAt(nextIndex) else { return nil }
+        return DetailViewController.createFromStoryboard(photoInfo: photoInfo, index: nextIndex)
     }
     
     

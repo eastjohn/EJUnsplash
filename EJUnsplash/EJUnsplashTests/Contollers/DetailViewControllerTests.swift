@@ -19,13 +19,18 @@ class DetailViewControllerTests: XCTestCase {
     }
 
     func testCreateViewController() throws {
-        let expectedURL = URL(string: "http://test.com")
+        let expectedPhotoInfo = PhotoInfo(name: "test", url: nil, size: CGSize())
         let expectedIndex = 2
         
-        let sut = DetailViewController.createFromStoryboard(url: expectedURL, index: expectedIndex)
+        let sut = DetailViewController.createFromStoryboard(photoInfo: expectedPhotoInfo, index: expectedIndex)
         
-        XCTAssertEqual((sut?.viewModel as? DetailViewModel)?.url, expectedURL)
+        XCTAssertEqual((sut?.viewModel as? DetailViewModel)?.photoInfo, expectedPhotoInfo)
         XCTAssertEqual(sut?.index, expectedIndex)
+    }
+    
+    
+    func testLoadView_ThenLoadedTitleLabel() {
+        
     }
 
 }

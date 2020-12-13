@@ -9,7 +9,7 @@ import Foundation
 
 protocol IPageViewModel {
     func setPhotoDatas(_ photoDatas: [PhotoInfo])
-    func urlAt(_ index: Int) -> URL?
+    func urlAt(_ index: Int) -> PhotoInfo?
 }
 
 
@@ -35,10 +35,10 @@ class PageViewModel: IPageViewModel {
     }
     
     
-    func urlAt(_ index: Int) -> URL? {
+    func urlAt(_ index: Int) -> PhotoInfo? {
         guard index >= 0 && index < photoDatas.count else { return nil }
         fetchDatasIfNeeded(index: index)
-        return photoDatas[index].url
+        return photoDatas[index]
     }
     
     private func fetchDatasIfNeeded(index: Int) {

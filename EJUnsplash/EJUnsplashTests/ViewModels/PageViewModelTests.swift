@@ -72,13 +72,13 @@ class PageViewModelTests: XCTestCase {
     
     func testUrlAt_WhenIndexIsZero_ThenReturnURL() {
         givenHasPhotoDatas()
-        XCTAssertEqual(sut.urlAt(0), sut.photoDatas[0].url)
+        XCTAssertEqual(sut.urlAt(0), sut.photoDatas[0])
     }
     
     
     func testUrlAt_WhenIndexIsTwo_ThenReturnURL() {
         givenHasPhotoDatas()
-        XCTAssertEqual(sut.urlAt(2), sut.photoDatas[2].url)
+        XCTAssertEqual(sut.urlAt(2), sut.photoDatas[2])
     }
 
     

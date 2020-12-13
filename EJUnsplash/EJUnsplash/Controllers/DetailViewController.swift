@@ -13,9 +13,9 @@ class DetailViewController: UIViewController {
     var index = -1
     var viewModel: IDetailViewModel!
     
-    static func createFromStoryboard(url: URL?, index: Int) -> DetailViewController? {
+    static func createFromStoryboard(photoInfo: PhotoInfo, index: Int) -> DetailViewController? {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID) as? DetailViewController
-        viewController?.setURL(url)
+        viewController?.setPhotoInfo(photoInfo)
         viewController?.index = index
         return viewController
     }
@@ -28,8 +28,8 @@ class DetailViewController: UIViewController {
     }
     
     
-    func setURL(_ url: URL?) {
-        viewModel = DetailViewModel(url: url)
+    func setPhotoInfo(_ photoInfo: PhotoInfo) {
+        viewModel = DetailViewModel(photoInfo: photoInfo)
     }
 
 }

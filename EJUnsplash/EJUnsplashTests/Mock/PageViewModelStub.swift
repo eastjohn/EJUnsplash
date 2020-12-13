@@ -16,8 +16,8 @@ class PageViewModelStub: IPageViewModel {
     }
     
     
-    func urlAt(_ index: Int) -> URL? {
+    func urlAt(_ index: Int) -> PhotoInfo? {
         guard index >= 0 && index < photoDatas.count else { return nil }
-        return photoDatas[index].url
+        return photoDatas[index]
     }
 }

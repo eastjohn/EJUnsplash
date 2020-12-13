@@ -11,9 +11,9 @@ protocol IDetailViewModel {
 }
 
 class DetailViewModel: IDetailViewModel {
-    var url: URL?
+    var photoInfo: PhotoInfo
     
-    init(url: URL?) {
-        self.url = url
+    init(photoInfo: PhotoInfo) {
+        self.photoInfo = photoInfo
     }
 }

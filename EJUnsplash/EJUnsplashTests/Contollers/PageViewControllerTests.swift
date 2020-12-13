@@ -69,7 +69,7 @@ class PageViewControllerTests: XCTestCase {
         sut.viewDidLoad()
         
         XCTAssertEqual(sut.viewControllers?.count, 1)
-        XCTAssertEqual(((sut.viewControllers?.first as? DetailViewController)?.viewModel as? DetailViewModel)?.url, viewModelStub.photoDatas[sut.selectedIndex].url)
+        XCTAssertEqual(((sut.viewControllers?.first as? DetailViewController)?.viewModel as? DetailViewModel)?.photoInfo, viewModelStub.photoDatas[sut.selectedIndex])
         XCTAssertEqual((sut.viewControllers?.first as? DetailViewController)?.index, sut.selectedIndex)
     }
 
@@ -77,18 +77,18 @@ class PageViewControllerTests: XCTestCase {
     func testPageViewControllerViewControllerBefore_ThenReturnPreviousViewController() {
         givenHasPhotoDatas()
         let expectedIndex = 1
-        let detailViewController = DetailViewController.createFromStoryboard(url: nil, index: expectedIndex + 1)!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: expectedIndex + 1)!
         
         let result = sut.pageViewController(sut, viewControllerBefore: detailViewController) as! DetailViewController
         
         
         XCTAssertEqual(result.index, expectedIndex)
-        XCTAssertEqual((result.viewModel as? DetailViewModel)?.url, viewModelStub.photoDatas[expectedIndex].url)
+        XCTAssertEqual((result.viewModel as? DetailViewModel)?.photoInfo, viewModelStub.photoDatas[expectedIndex])
     }
     
     
     func testPageViewControllerViewControllerBefore_WhenNotExistIndexOnViewModel_ThenReturnNil() {
-        let detailViewController = DetailViewController.createFromStoryboard(url: nil, index: 0)!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: 0)!
         
         let result = sut.pageViewController(sut, viewControllerBefore: detailViewController)
         
@@ -99,18 +99,18 @@ class PageViewControllerTests: XCTestCase {
     func testPageViewControllerViewControllerAfter_ThenReturnNextViewController() {
         givenHasPhotoDatas()
         let expectedIndex = 3
-        let detailViewController = DetailViewController.createFromStoryboard(url: nil, index: expectedIndex - 1)!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: expectedIndex - 1)!
         
         let result = sut.pageViewController(sut, viewControllerAfter: detailViewController) as! DetailViewController
         
         
         XCTAssertEqual(result.index, expectedIndex)
-        XCTAssertEqual((result.viewModel as? DetailViewModel)?.url, viewModelStub.photoDatas[expectedIndex].url)
+        XCTAssertEqual((result.viewModel as? DetailViewModel)?.photoInfo, viewModelStub.photoDatas[expectedIndex])
     }
     
     
     func testPageViewControllerViewControllerAfter_WhenNotExistIndexOnViewModel_ThenReturnNil() {
-        let detailViewController = DetailViewController.createFromStoryboard(url: nil, index: 5)!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: 5)!
         
         let result = sut.pageViewController(sut, viewControllerBefore: detailViewController)
         
