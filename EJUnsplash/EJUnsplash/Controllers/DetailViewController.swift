@@ -13,6 +13,9 @@ class DetailViewController: UIViewController {
     var index = -1
     var viewModel: IDetailViewModel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     static func createFromStoryboard(photoInfo: PhotoInfo, index: Int) -> DetailViewController? {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID) as? DetailViewController
         viewController?.setPhotoInfo(photoInfo)
@@ -24,7 +27,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = viewModel.getName()
+        
+        viewModel.bindPhotoImage { [weak self] image in
+            self?.imageView.image = image
+        }
     }
     
     
