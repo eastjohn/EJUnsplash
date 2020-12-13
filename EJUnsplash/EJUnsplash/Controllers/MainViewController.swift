@@ -89,6 +89,16 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         viewModel.didEndDisplayingAt(indexPath: indexPath)
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: 아래코드는 테스트 코드로 다시 작성해야한다.
+        let pageViewController = PageViewController.createFromStoryboard(unsplashService: (viewModel as? ListViewModel)!.unsplashService)
+        pageViewController?.setPhotoDatas((viewModel as? ListViewModel)!.photoDatas)
+        pageViewController?.selectedIndex = indexPath.row
+        pageViewController?.modalPresentationStyle = .fullScreen
+        present(pageViewController!, animated: true, completion: nil)
+    }
 }
 
 
