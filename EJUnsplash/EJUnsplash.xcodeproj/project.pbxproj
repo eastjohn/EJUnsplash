@@ -28,6 +28,9 @@
 		52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B78258527D9006FF4CA /* MockURLSession.swift */; };
 		52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */; };
 		52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FD225852C510035547B /* UnsplashRequestTests.swift */; };
+		52A21FD72585C80C0035547B /* ImageLoadOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */; };
+		52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FDA2585CC870035547B /* ImageCacheManager.swift */; };
+		52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -79,6 +82,9 @@
 		52562B78258527D9006FF4CA /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		52A21FD225852C510035547B /* UnsplashRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRequestTests.swift; sourceTree = "<group>"; };
+		52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperationTests.swift; sourceTree = "<group>"; };
+		52A21FDA2585CC870035547B /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerStub.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				52562B402584A3B9006FF4CA /* NetworkManager.swift */,
 				52562B482584A57E006FF4CA /* UnsplashRequest.swift */,
 				52562B4C2584A694006FF4CA /* UnsplashAPI.swift */,
+				52A21FDA2585CC870035547B /* ImageCacheManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 				52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */,
 				52562B722585253B006FF4CA /* NetworkManagerTests.swift */,
 				52A21FD225852C510035547B /* UnsplashRequestTests.swift */,
+				52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				52562B442584A4B0006FF4CA /* NetworkManagerStub.swift */,
 				52562B78258527D9006FF4CA /* MockURLSession.swift */,
 				52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */,
+				52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
+				52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */,
 				52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
@@ -414,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
+				52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52562B452584A4B0006FF4CA /* NetworkManagerStub.swift in Sources */,
 				52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */,
@@ -428,6 +439,7 @@
 				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */,
+				52A21FD72585C80C0035547B /* ImageLoadOperationTests.swift in Sources */,
 				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,
 				52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */,
 			);
