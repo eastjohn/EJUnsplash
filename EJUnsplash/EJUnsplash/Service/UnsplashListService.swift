@@ -50,6 +50,7 @@ class UnsplashListService: UnsplashService {
         if phothDatas.count < perPage {
             canFetch = false
         }
+        currentPage += 1
         
         updateHandlers.forEach { handler in
             handler(phothDatas)
@@ -60,6 +61,7 @@ class UnsplashListService: UnsplashService {
     private func createPhotoInfo(_ aDic: [String: Any]) -> PhotoInfo? {
         guard let name = (aDic["user"] as? [String: Any])?["name"] as? String else { return nil }
         guard let urlString = (aDic["urls"] as? [String: String])?["small"] else { return nil }
+        
         return PhotoInfo(name: name, url: URL(string: urlString))
     }
 }

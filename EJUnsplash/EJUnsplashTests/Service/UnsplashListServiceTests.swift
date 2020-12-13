@@ -216,6 +216,24 @@ class UnsplashListServiceTests: XCTestCase {
     }
     
     
+    func testReceiveData_ThenIncreaseCurrentPage() {
+        let expectedCurrentPage = sut.currentPage + 1
+        
+        whenFetchData(jsonFile: "page1.json")
+        
+        XCTAssertEqual(sut.currentPage, expectedCurrentPage)
+    }
+    
+    
+    func testReceiveDataWithError_ThenNotIncreaseCurrentPage() {
+        let expectedCurrentPage = sut.currentPage
+        
+        whenFetchData(jsonData: nil)
+        
+        XCTAssertEqual(sut.currentPage, expectedCurrentPage)
+    }
+    
+    
     func testFetchData_ThenNotRetainCylcle() {
         var wasCalled = false
         sut.addBindingUpdateDatas { _ in

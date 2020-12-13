@@ -13,8 +13,17 @@ protocol INetworkManager {
 
 
 struct NetworkManager: INetworkManager {
+    var session: URLSession = URLSession.shared
+    
     func sendRequest(_ request: UnsplashRequest, completionHandler: @escaping (Data?, Error?) -> ()) {
-        
+        // TODO request가 nil일때 오류 처리 구현해야함
+        guard let urlRequest = request.createURLRequest() else { fatalError() }
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            DispatchQueue.main.async {
+                completionHandler(error != nil ? nil : data, error)
+            }
+        }
+        task.resume()
     }
     
 }

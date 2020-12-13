@@ -24,6 +24,10 @@
 		52562B6325850769006FF4CA /* page4.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B6225850769006FF4CA /* page4.json */; };
 		52562B672585077D006FF4CA /* page5.json in Resources */ = {isa = PBXBuildFile; fileRef = 52562B662585077D006FF4CA /* page5.json */; };
 		52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B6A2585095B006FF4CA /* JsonDataCreator.swift */; };
+		52562B732585253B006FF4CA /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B722585253B006FF4CA /* NetworkManagerTests.swift */; };
+		52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B78258527D9006FF4CA /* MockURLSession.swift */; };
+		52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */; };
+		52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FD225852C510035547B /* UnsplashRequestTests.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -71,6 +75,10 @@
 		52562B6225850769006FF4CA /* page4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page4.json; sourceTree = "<group>"; };
 		52562B662585077D006FF4CA /* page5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = page5.json; sourceTree = "<group>"; };
 		52562B6A2585095B006FF4CA /* JsonDataCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataCreator.swift; sourceTree = "<group>"; };
+		52562B722585253B006FF4CA /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		52562B78258527D9006FF4CA /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		52A21FD225852C510035547B /* UnsplashRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRequestTests.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 			children = (
 				52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */,
 				52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */,
+				52562B722585253B006FF4CA /* NetworkManagerTests.swift */,
+				52A21FD225852C510035547B /* UnsplashRequestTests.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -264,6 +274,8 @@
 				52CD569025831CFD00DA6387 /* MockTableView.swift */,
 				52562B2D2583B371006FF4CA /* UnsplashServiceStub.swift */,
 				52562B442584A4B0006FF4CA /* NetworkManagerStub.swift */,
+				52562B78258527D9006FF4CA /* MockURLSession.swift */,
+				52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -404,14 +416,18 @@
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52562B452584A4B0006FF4CA /* NetworkManagerStub.swift in Sources */,
+				52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */,
 				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
+				52562B732585253B006FF4CA /* NetworkManagerTests.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52562B3D258499FE006FF4CA /* UnsplashListServiceTests.swift in Sources */,
 				52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
+				52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
 				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
+				52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */,
 				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,
 				52562B372583D7A4006FF4CA /* ImageLoadOperatorTests.swift in Sources */,
 			);
