@@ -21,7 +21,9 @@ class UnsplashListService: UnsplashService {
         updateHandlers.append(updateHandler)
     }
     
-    // TODO: removeUpdateHandler도 구현해야함
+    func removeBindingUpdateDatas() {
+        
+    }
     
     func fetchDatas() {
         guard canFetch else { return }

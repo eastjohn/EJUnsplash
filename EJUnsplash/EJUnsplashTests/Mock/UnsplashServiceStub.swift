@@ -17,6 +17,9 @@ class UnsplashServiceStub: UnsplashService {
         self.updateHandler = updateHandler
     }
     
+    func removeBindingUpdateDatas() {
+        wasCalled += "called \(#function)"
+    }
     
     func fetchDatas() {
         wasCalled += "called \(#function)"
