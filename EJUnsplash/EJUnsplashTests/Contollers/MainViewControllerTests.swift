@@ -283,4 +283,18 @@ class MainViewControllerTests: XCTestCase {
         XCTAssertTrue(viewModelStub.wasCalled.contains(expectedWasCalled))
         XCTAssertEqual(viewModelStub.paramIndexPath, expectedIndexPath)
     }
+    
+    
+    func testTableViewHeightForRowAt_ThenReturnCellHeight() {
+        givenHasViewModelSub()
+        let expectedWasCalled = "called photoImageSizeForRowAt(indexPath:)"
+        let expectedIndexPath = IndexPath(row: 2, section: 0)
+        let expectedHeight = viewModelStub.photoImageSize.height / viewModelStub.photoImageSize.width * sut.tableView.frame.width
+        
+        let result = sut.tableView(sut.tableView, heightForRowAt: expectedIndexPath)
+        
+        XCTAssertEqual(result, expectedHeight)
+        XCTAssertEqual(viewModelStub.paramIndexPath, expectedIndexPath)
+        XCTAssertTrue(viewModelStub.wasCalled.contains(expectedWasCalled))
+    }
 }

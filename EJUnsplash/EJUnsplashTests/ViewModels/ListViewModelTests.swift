@@ -25,16 +25,9 @@ class ListViewModelTests: XCTestCase {
     
     // MARK: - Given
     func givenHasPhotoDatas(count: Int = 3) {
-//        sut.photoDatas = [PhotoInfo(name: "test1", url: URL(string: "http://test1.com")),
-//                          PhotoInfo(name: "test2", url: URL(string: "http://test2.com")),
-//                          PhotoInfo(name: "test2", url: URL(string: "http://test3.com")),
-//                          PhotoInfo(name: "test2", url: URL(string: "http://test4.com")),
-//                          PhotoInfo(name: "test2", url: URL(string: "http://test5.com")),
-//                          PhotoInfo(name: "test2", url: URL(string: "http://test6.com")),
-//                          PhotoInfo(name: "test3", url: URL(string: "http://test7.com"))]
         var photoDatas = [PhotoInfo]()
         for index in 0..<count {
-            photoDatas.append(PhotoInfo(name: "test\(index)", url: URL(string: "http://test\(index).com")))
+            photoDatas.append(PhotoInfo(name: "test\(index)", url: URL(string: "http://test\(index).com"), size: CGSize(width: 10 * index, height: 20 * index)))
         }
         sut.photoDatas = photoDatas
     }
@@ -78,7 +71,7 @@ class ListViewModelTests: XCTestCase {
 
     
     func testFetchedPhotoDatas_ThenUpdatePhotoDatas() {
-        let photoDatas = [PhotoInfo(name: "test1", url: nil), PhotoInfo(name: "test2", url: nil)]
+        let photoDatas = [PhotoInfo(name: "test1", url: nil, size: CGSize()), PhotoInfo(name: "test2", url: nil, size: CGSize())]
         
         unsplashServiceStub.updateHandler?(photoDatas)
         
@@ -93,7 +86,7 @@ class ListViewModelTests: XCTestCase {
             result = range
         }
         
-        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil), PhotoInfo(name: "test2", url: nil)])
+        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil, size: CGSize()), PhotoInfo(name: "test2", url: nil, size: CGSize())])
         
         XCTAssertEqual(result, expectedRange)
     }
@@ -105,8 +98,8 @@ class ListViewModelTests: XCTestCase {
         sut.bindPhotoDatas { range in
             result = range
         }
-        sut.photoDatas.append(PhotoInfo(name: "test0", url: nil))
-        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil), PhotoInfo(name: "test2", url: nil)])
+        sut.photoDatas.append(PhotoInfo(name: "test0", url: nil, size: CGSize()))
+        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil, size: CGSize()), PhotoInfo(name: "test2", url: nil, size: CGSize())])
         
         XCTAssertEqual(result, expectedRange)
     }
@@ -120,7 +113,7 @@ class ListViewModelTests: XCTestCase {
         sut.bindPhotoDatas(changedHandler: handler)
         
         sut = nil
-        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil)])
+        unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: nil, size: CGSize())])
         
         XCTAssertFalse(wasCalled)
     }
@@ -132,7 +125,7 @@ class ListViewModelTests: XCTestCase {
     
     
     func testDataCount_WhenExistDatas_ThenReturnDataCount() {
-        sut.photoDatas.append(contentsOf: [PhotoInfo(name: "test1", url: nil), PhotoInfo(name: "test2", url: nil)])
+        sut.photoDatas.append(contentsOf: [PhotoInfo(name: "test1", url: nil, size: CGSize()), PhotoInfo(name: "test2", url: nil, size: CGSize())])
         
         XCTAssertEqual(sut.dataCount, 2)
     }
@@ -272,5 +265,15 @@ class ListViewModelTests: XCTestCase {
         
         XCTAssertNil(sut.imageLoadOperatorDic[indexPath])
         XCTAssertTrue(imageLoadOperator.isCancelled)
+    }
+    
+    
+    func testPhotoImageSizeForRowAt_ThenReturnImageSize() {
+        let indexPath = IndexPath(row: 2, section: 0)
+        givenHasPhotoDatas()
+        
+        let result = sut.photoImageSizeForRowAt(indexPath: indexPath)
+        
+        XCTAssertEqual(result, sut.photoDatas[indexPath.row].size)
     }
 }

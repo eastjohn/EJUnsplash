@@ -33,6 +33,8 @@
 		52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */; };
 		52A21FE32585DC340035547B /* ImageCacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FE22585DC340035547B /* ImageCacheManagerTests.swift */; };
 		52A21FE82585E4B90035547B /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A21FE72585E4B80035547B /* sampleImage.png */; };
+		52A21FF02585F8FE0035547B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FEF2585F8FE0035547B /* ImageLoader.swift */; };
+		52A21FF42585F96F0035547B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FF32585F96F0035547B /* DataLoader.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -89,6 +91,8 @@
 		52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerStub.swift; sourceTree = "<group>"; };
 		52A21FE22585DC340035547B /* ImageCacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerTests.swift; sourceTree = "<group>"; };
 		52A21FE72585E4B80035547B /* sampleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sampleImage.png; sourceTree = "<group>"; };
+		52A21FEF2585F8FE0035547B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		52A21FF32585F96F0035547B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			children = (
 				52CD56A32583352000DA6387 /* UICreator.swift */,
 				52562B6A2585095B006FF4CA /* JsonDataCreator.swift */,
+				52A21FEF2585F8FE0035547B /* ImageLoader.swift */,
+				52A21FF32585F96F0035547B /* DataLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A21FF42585F96F0035547B /* DataLoader.swift in Sources */,
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
@@ -452,6 +459,7 @@
 				52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
 				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
+				52A21FF02585F8FE0035547B /* ImageLoader.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */,
 				52A21FE32585DC340035547B /* ImageCacheManagerTests.swift in Sources */,

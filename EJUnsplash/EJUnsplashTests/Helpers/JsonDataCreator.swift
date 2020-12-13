@@ -23,7 +23,9 @@ class JsonDataCreator {
               },
               "user":{
                  "name":"Test",
-              }
+              },
+              "width":100,
+              "height":200
            }
         ]
         """#.data(using: .utf8)!

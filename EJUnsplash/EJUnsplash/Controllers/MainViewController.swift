@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     
     private func configureUIs() {
         tableView.contentInset = UIEdgeInsets(top: stickHeaderViewHeightConstraint.constant, left: 0, bottom: 0, right: 0)
+//        tableView.estimatedRowHeight = 600
     }
     
     private func configureViewModel() {
@@ -65,6 +66,12 @@ extension MainViewController: UITableViewDataSource {
 
 
 extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let imageSize = viewModel.photoImageSizeForRowAt(indexPath: indexPath)
+        return imageSize.height / imageSize.width * tableView.frame.width
+    }
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateStickyHeaderViewHeightConstraintByScrollViewYOffset(contentYOffset: scrollView.contentOffset.y)
     }

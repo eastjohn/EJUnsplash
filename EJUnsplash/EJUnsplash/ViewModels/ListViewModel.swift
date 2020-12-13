@@ -18,6 +18,7 @@ protocol IListViewModel {
     func prefetchRowsAt(indexPaths: [IndexPath])
     func cancelPrefetchingForRowsAt(indexPaths: [IndexPath])
     func didEndDisplayingAt(indexPath: IndexPath)
+    func photoImageSizeForRowAt(indexPath: IndexPath) -> CGSize
 }
 
 
@@ -116,5 +117,10 @@ class ListViewModel: IListViewModel {
         guard let imageLoadOperator = imageLoadOperatorDic[indexPath] else { return }
         imageLoadOperator.cancel()
         imageLoadOperatorDic.removeValue(forKey: indexPath)
+    }
+    
+    
+    func photoImageSizeForRowAt(indexPath: IndexPath) -> CGSize {
+        return photoDatas[indexPath.row].size
     }
 }

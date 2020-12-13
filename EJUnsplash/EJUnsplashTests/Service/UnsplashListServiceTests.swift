@@ -36,7 +36,7 @@ class UnsplashListServiceTests: XCTestCase {
             wasCalled = true
         }
         
-        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil)]) }
+        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
         
         XCTAssertEqual(sut.updateHandlers.count, 1)
         XCTAssertTrue(wasCalled)
@@ -53,7 +53,7 @@ class UnsplashListServiceTests: XCTestCase {
             calledCount += 1
         }
         
-        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil)]) }
+        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
         
         XCTAssertEqual(sut.updateHandlers.count, 2)
         XCTAssertEqual(calledCount, 2)
@@ -154,7 +154,7 @@ class UnsplashListServiceTests: XCTestCase {
     
     
     func testReceiveData_ThenCallUpdateHandler() {
-        let expectedPhotoData = PhotoInfo(name: "Test", url: URL(string: "https://images.unsplash.com/photo1"))
+        let expectedPhotoData = PhotoInfo(name: "Test", url: URL(string: "https://images.unsplash.com/photo1"), size: CGSize(width: 100, height: 200))
         var result: [PhotoInfo]? = nil
         sut.addBindingUpdateDatas { photoInfos in
             result = photoInfos

@@ -13,9 +13,10 @@ class ListViewModelStub: IListViewModel {
     var dataCount = 10
     var paramIndexPath: IndexPath!
     var paramIndexPaths = [IndexPath]()
-    var photoInfo = PhotoInfo(name: "testName", url: URL(string: "http://test.com"))
+    var photoInfo = PhotoInfo(name: "testName", url: URL(string: "http://test.com"), size: CGSize(width: 10, height: 20))
     var photoImage = UIImage()
     var chagedHandler: ( (Range<Int>)->() )?
+    var photoImageSize = CGSize(width: 100, height: 200)
     
     
     func fetchDatas() {
@@ -52,5 +53,12 @@ class ListViewModelStub: IListViewModel {
     func didEndDisplayingAt(indexPath: IndexPath) {
         wasCalled += "called \(#function)"
         paramIndexPath = indexPath
+    }
+    
+    
+    func photoImageSizeForRowAt(indexPath: IndexPath) -> CGSize {
+        wasCalled += "called \(#function)"
+        paramIndexPath = indexPath
+        return photoImageSize
     }
 }
