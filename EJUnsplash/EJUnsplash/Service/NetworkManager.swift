@@ -9,10 +9,12 @@ import Foundation
 
 protocol INetworkManager {
     func sendRequest(_ request: UnsplashRequest, completionHandler: @escaping (Data?, Error?)->())
+    func sendDownloadRequest(url: URL, completionHandler: @escaping (Data?, Error?)->())
 }
 
 
 struct NetworkManager: INetworkManager {
+    
     var session: URLSession = URLSession.shared
     
     func sendRequest(_ request: UnsplashRequest, completionHandler: @escaping (Data?, Error?) -> ()) {
@@ -24,6 +26,11 @@ struct NetworkManager: INetworkManager {
             }
         }
         task.resume()
+    }
+    
+    
+    func sendDownloadRequest(url: URL, completionHandler: @escaping (Data?, Error?) -> ()) {
+        
     }
     
 }
