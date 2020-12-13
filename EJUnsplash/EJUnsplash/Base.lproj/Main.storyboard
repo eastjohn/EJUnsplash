@@ -153,7 +153,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="caS-CE-6sZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dMd-Pk-eaO" firstAttribute="top" secondItem="caS-CE-6sZ" secondAttribute="top" id="5QT-Pk-LwW"/>
                             <constraint firstItem="caS-CE-6sZ" firstAttribute="trailing" secondItem="ezT-Fr-YMI" secondAttribute="trailing" id="WBY-h8-9RU"/>
