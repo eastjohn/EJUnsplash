@@ -24,10 +24,19 @@ class ListViewModelTests: XCTestCase {
     
     
     // MARK: - Given
-    func givenHasPhotoDatas() {
-        sut.photoDatas = [PhotoInfo(name: "test1", url: URL(string: "http://test1.com")),
-                          PhotoInfo(name: "test2", url: URL(string: "http://test2.com")),
-                          PhotoInfo(name: "test3", url: URL(string: "http://test3.com"))]
+    func givenHasPhotoDatas(count: Int = 3) {
+//        sut.photoDatas = [PhotoInfo(name: "test1", url: URL(string: "http://test1.com")),
+//                          PhotoInfo(name: "test2", url: URL(string: "http://test2.com")),
+//                          PhotoInfo(name: "test2", url: URL(string: "http://test3.com")),
+//                          PhotoInfo(name: "test2", url: URL(string: "http://test4.com")),
+//                          PhotoInfo(name: "test2", url: URL(string: "http://test5.com")),
+//                          PhotoInfo(name: "test2", url: URL(string: "http://test6.com")),
+//                          PhotoInfo(name: "test3", url: URL(string: "http://test7.com"))]
+        var photoDatas = [PhotoInfo]()
+        for index in 0..<count {
+            photoDatas.append(PhotoInfo(name: "test\(index)", url: URL(string: "http://test\(index).com")))
+        }
+        sut.photoDatas = photoDatas
     }
 
     
@@ -212,9 +221,9 @@ class ListViewModelTests: XCTestCase {
     
     func testPrefetchRowsAt_WhenIndexPathIsContainPhotoDatas_ThenNotCallFetchDatasOfUnsplashService() {
         let notCalled = "called fetchDatas()"
-        givenHasPhotoDatas()
+        givenHasPhotoDatas(count: 7)
         
-        sut.prefetchRowsAt(indexPaths: [IndexPath(row: 0, section: 0), IndexPath(row: 2, section: 0)])
+        sut.prefetchRowsAt(indexPaths: [IndexPath(row: 0, section: 0), IndexPath(row: 1, section: 0)])
         
         XCTAssertFalse(unsplashServiceStub.wasCalled.contains(notCalled))
     }

@@ -22,6 +22,8 @@ protocol IListViewModel {
 
 
 class ListViewModel: IListViewModel {
+    static let preFetchingCount = 5
+    
     var unsplashService: UnsplashService
     
     var photoDatas = [PhotoInfo]()
@@ -82,7 +84,8 @@ class ListViewModel: IListViewModel {
     
     
     private func fetchDatasIfNeeded(indexPaths: [IndexPath]) {
-        if !indexPaths.contains(where: { $0.row < photoDatas.count }) {
+        print(indexPaths)
+        if indexPaths.contains(where: { $0.row >= photoDatas.count - ListViewModel.preFetchingCount }) {
             unsplashService.fetchDatas()
         }
     }
