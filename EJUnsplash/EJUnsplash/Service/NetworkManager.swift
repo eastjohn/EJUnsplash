@@ -30,7 +30,10 @@ struct NetworkManager: INetworkManager {
     
     
     func sendDownloadRequest(url: URL, completionHandler: @escaping (Data?, Error?) -> ()) {
-        
+        let task = session.dataTask(with: url) { data, response, error in
+            completionHandler(data, error)
+        }
+        task.resume()
     }
     
 }

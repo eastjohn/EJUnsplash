@@ -74,4 +74,33 @@ class NetworkManagerTests: XCTestCase {
         
         whenSendRequest_ThenCallCompletionHandler(data: data, error: expectedError, expectedData: nil, expectedError: expectedError)
     }
+    
+    
+    func testSendDownloadRequest_ThenCallDataTaskOfSessionAndResume() {
+        let expectedURL = URL(string: "http://test.com")!
+        let expectedWasCalled = "called dataTask(with:completionHandler:)"
+        
+        sut.sendDownloadRequest(url: expectedURL) { _, _ in }
+        
+        XCTAssertTrue(session.wasCalled.contains(expectedWasCalled))
+        XCTAssertEqual(session.paramURL, expectedURL)
+        XCTAssertTrue(session.dataTask!.wasCalled.contains("called resume()"))
+    }
+    
+    
+    func testSendDownlaodRequest_WhenReceiveData_ThenCallCompletionHandler() {
+        let expectedData = Data(base64Encoded: "test")
+        let expectedError = NSError(domain: "test", code: -1, userInfo: nil)
+        
+        var wasCalled = false
+        sut.sendDownloadRequest(url: URL(string: "http://test.com")!) { data, error in
+            XCTAssertEqual(data, expectedData)
+            XCTAssertEqual(error as NSError?, expectedError)
+            wasCalled = true
+        }
+        
+        self.session.dataTask?.completionHandler(expectedData, nil, expectedError)
+        
+        XCTAssertTrue(wasCalled)
+    }
 }
