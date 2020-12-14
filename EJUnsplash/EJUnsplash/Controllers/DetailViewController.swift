@@ -38,5 +38,10 @@ class DetailViewController: UIViewController {
     func setPhotoInfo(_ photoInfo: PhotoInfo) {
         viewModel = DetailViewModel(photoInfo: photoInfo)
     }
+    
+    
+    @IBAction func close(sender: Any?) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 
 }

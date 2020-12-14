@@ -150,6 +150,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6v-lt-qeA">
                                 <rect key="frame" x="28" y="44" width="30" height="34"/>
                                 <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="closeWithSender:" destination="n6c-LA-Irs" eventType="touchUpInside" id="xV8-5Q-TIM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="caS-CE-6sZ"/>

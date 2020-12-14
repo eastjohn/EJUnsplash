@@ -11,6 +11,7 @@ import XCTest
 class MainViewControllerTests: XCTestCase {
     private var sut: MainViewController!
     private var viewModelStub: ListViewModelStub!
+    private var window: UIWindow!
     
     override func setUpWithError() throws {
         sut = UICreator.createMainViewController()
@@ -20,6 +21,7 @@ class MainViewControllerTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
         viewModelStub = nil
+        window = nil
     }
 
     
@@ -40,13 +42,15 @@ class MainViewControllerTests: XCTestCase {
     }
     
     
-    func givenHasPhotoDatasAndIncludeInWindow() {
+    func givenHasPhotoDatasAndIncludeInWindow(count: Int = 3) {
         givenLoadedView()
         let viewModel = sut.viewModel as! ListViewModel
-        viewModel.photoDatas = [PhotoInfo(name: "test1", url: nil, size: CGSize(width: 10, height: 20)),
-                                PhotoInfo(name: "test2", url: nil, size: CGSize(width: 10, height: 20)),
-                                PhotoInfo(name: "test3", url: nil, size: CGSize(width: 10, height: 20))]
-        UIApplication.shared.windows[0].rootViewController = sut
+        for index in 0..<count {
+            viewModel.photoDatas.append(PhotoInfo(name: "test\(index)", url: nil, size: CGSize(width: 400, height: 300)))
+        }
+        window = UIWindow()
+        window.isHidden = false
+        window.addSubview(sut.view)
     }
     
     
@@ -337,5 +341,23 @@ class MainViewControllerTests: XCTestCase {
         
         XCTAssertTrue(result is ListPresentingAnimator)
         XCTAssertEqual((result as? ListPresentingAnimator)?.originalFrame, expectedOriginalFrame)
+    }
+    
+    
+    func testPageViewControllerDismiss_ThenChangeScrollOfTableView() {
+        givenHasPhotoDatasAndIncludeInWindow(count: 20)
+        sut.tableView.reloadData()
+        let index = 15
+        let pageViewController = PageViewController.createFromStoryboard(unsplashService: UnsplashServiceStub())!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: index)!
+        pageViewController.setViewControllers([detailViewController], direction: .forward, animated: false, completion: nil)
+        sut.present(pageViewController, animated: false, completion: nil)
+        
+
+        sut.dismiss(animated: false, completion: nil)
+
+
+        let cell = sut.tableView.cellForRow(at: IndexPath(row: index, section: 0))!
+        XCTAssertEqual(sut.tableView.contentOffset.y, cell.frame.minY - (sut.tableView.frame.height - cell.frame.height) / 2, accuracy: 0.1)
     }
 }

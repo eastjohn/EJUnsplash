@@ -98,4 +98,27 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertNil(weakSut)
     }
 
+    
+    func testClose_ThenDismiss() {
+        let window = UIWindow()
+        let parentViewController = MockViewController()
+        window.addSubview(parentViewController.view)
+        parentViewController.present(sut, animated: false, completion: nil)
+
+        sut.close(sender: nil)
+
+        XCTAssertTrue(parentViewController.wasCalled.contains("called dismiss(animated:completion:)"))
+        XCTAssertTrue(parentViewController.paramAnimated)
+    }
+}
+
+
+class MockViewController : UIViewController {
+    var wasCalled = ""
+    var paramAnimated = false
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        wasCalled += "called \(#function)"
+        paramAnimated = flag
+    }
 }
