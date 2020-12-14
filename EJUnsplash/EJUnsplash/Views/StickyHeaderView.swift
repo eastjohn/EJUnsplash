@@ -34,4 +34,14 @@ class StickyHeaderView: UIView {
     private func calculateAlphaByHeightRatio() -> CGFloat {
         return (bounds.height - StickyHeaderView.MinHeight) / (StickyHeaderView.MaxHeight - StickyHeaderView.MinHeight)
     }
+    
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let result = super.hitTest(point, with: event)
+        if result?.isKind(of: UITextField.self) == true {
+            return result
+        }
+        
+        return nil
+    }
 }
