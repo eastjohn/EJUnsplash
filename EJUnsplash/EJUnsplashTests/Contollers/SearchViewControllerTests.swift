@@ -387,7 +387,6 @@ class SearchViewControllerTests: XCTestCase {
     }
 
 
-    // TODO: UnsplashSearchService 구현 완료한 후에 테스트하기
     func testPageViewControllerDismiss_ThenChangeScrollOfTableView() {
         givenHasPhotoDatasAndIncludeInWindow(count: 20)
         sut.tableView.reloadData()
@@ -406,5 +405,32 @@ class SearchViewControllerTests: XCTestCase {
     }
 
 
+    func testLoadView_ThenLoadedNoResultsViewAndHidden() {
+        sut.loadView()
+        
+        XCTAssertNotNil(sut.noResultsView)
+        XCTAssertTrue(sut.noResultsView.isHidden)
+    }
+    
+    
+    func testChanagePhotoDatas_WhenPhotoDatasIsEmpty_ThenShowNoResultsView() {
+        givenHasViewModelSub()
+        sut.viewDidLoad()
+        
+        viewModelStub.chagedHandler?(0..<0)
+
+        XCTAssertFalse(sut.noResultsView.isHidden)
+    }
+    
+    
+    func testChanagePhotoDatas_WhenPhotoDatasIsNotEmpty_ThenHideNoResultsView() {
+        givenHasViewModelSub()
+        sut.viewDidLoad()
+        sut.noResultsView.isHidden = false
+        
+        viewModelStub.chagedHandler?(0..<1)
+
+        XCTAssertTrue(sut.noResultsView.isHidden)
+    }
 
 }

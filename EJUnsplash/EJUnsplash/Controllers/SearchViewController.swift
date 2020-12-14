@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
             searchBar.backgroundImage = UIImage()
         }
     }
+    @IBOutlet weak var noResultsView: UILabel!
     
     
     var viewModel: ISearchViewModel = ListViewModel(service: UnsplashSearchService())
@@ -49,11 +50,20 @@ class SearchViewController: UIViewController {
     
     
     private func updateTableView(range: Range<Int>) {
+        updateHiddenOfNoResultsView(range: range)
         if range.startIndex == 0 {
             tableView.reloadData()
         } else {
             tableView.insertRows(at: range.map { IndexPath(row: $0, section: 0) }, with: .none)
         }
+    }
+    
+    private func updateHiddenOfNoResultsView(range: Range<Int>) {
+        noResultsView.isHidden = !isEmpty(range: range)
+    }
+    
+    private func isEmpty(range: Range<Int>) -> Bool {
+        return range == 0..<0
     }
     
     

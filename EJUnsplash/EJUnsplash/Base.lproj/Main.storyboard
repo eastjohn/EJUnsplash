@@ -231,6 +231,13 @@
                                     <outlet property="prefetchDataSource" destination="3GG-Rf-90J" id="dfD-x0-h0s"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-Vr-8UU">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" systemColor="systemFillColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-VT-4Ga">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                 <subviews>
@@ -256,15 +263,20 @@
                         <constraints>
                             <constraint firstItem="5kp-FW-Goe" firstAttribute="trailing" secondItem="EcC-tl-czr" secondAttribute="trailing" id="Kai-rE-uHI"/>
                             <constraint firstItem="5kp-FW-Goe" firstAttribute="leading" secondItem="EcC-tl-czr" secondAttribute="leading" id="MxS-MV-CUw"/>
+                            <constraint firstItem="lRZ-Vr-8UU" firstAttribute="top" secondItem="IrE-VT-4Ga" secondAttribute="bottom" id="Q8l-dY-IaN"/>
                             <constraint firstItem="5kp-FW-Goe" firstAttribute="top" secondItem="Jca-ud-zov" secondAttribute="top" id="TEg-Rs-6W4"/>
+                            <constraint firstItem="EcC-tl-czr" firstAttribute="bottom" secondItem="lRZ-Vr-8UU" secondAttribute="bottom" id="WR0-Tx-Z7L"/>
                             <constraint firstItem="IrE-VT-4Ga" firstAttribute="top" secondItem="Jca-ud-zov" secondAttribute="top" id="bVL-Wo-Wr4"/>
                             <constraint firstItem="IrE-VT-4Ga" firstAttribute="trailing" secondItem="EcC-tl-czr" secondAttribute="trailing" id="cjh-wf-vEG"/>
                             <constraint firstItem="5kp-FW-Goe" firstAttribute="bottom" secondItem="EcC-tl-czr" secondAttribute="bottom" id="d4o-jL-tIp"/>
+                            <constraint firstItem="EcC-tl-czr" firstAttribute="trailing" secondItem="lRZ-Vr-8UU" secondAttribute="trailing" id="gVz-Vc-YZ7"/>
+                            <constraint firstItem="lRZ-Vr-8UU" firstAttribute="leading" secondItem="EcC-tl-czr" secondAttribute="leading" id="qWf-wg-1QR"/>
                             <constraint firstItem="IrE-VT-4Ga" firstAttribute="leading" secondItem="EcC-tl-czr" secondAttribute="leading" id="s98-9T-0Cc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="headerView" destination="IrE-VT-4Ga" id="FjR-hx-Ptw"/>
+                        <outlet property="noResultsView" destination="lRZ-Vr-8UU" id="7a0-xe-aOm"/>
                         <outlet property="searchBar" destination="hQv-Vg-IeP" id="o1e-lE-Dq0"/>
                         <outlet property="tableView" destination="5kp-FW-Goe" id="QJE-TZ-kjm"/>
                     </connections>
@@ -277,6 +289,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
