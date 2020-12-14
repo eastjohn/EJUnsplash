@@ -66,6 +66,9 @@
 		52CD569A258332ED00DA6387 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5699258332ED00DA6387 /* PhotoInfo.swift */; };
 		52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD569F2583342100DA6387 /* ListViewCellTests.swift */; };
 		52CD56A42583352000DA6387 /* UICreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56A32583352000DA6387 /* UICreator.swift */; };
+		52F528AB2587345400C7B88C /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528AA2587345400C7B88C /* SearchViewControllerTests.swift */; };
+		52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528AE258736E100C7B88C /* SearchViewController.swift */; };
+		52F528B72587451300C7B88C /* UnsplashSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528B62587451300C7B88C /* UnsplashSearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		52CD5699258332ED00DA6387 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		52CD569F2583342100DA6387 /* ListViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCellTests.swift; sourceTree = "<group>"; };
 		52CD56A32583352000DA6387 /* UICreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICreator.swift; sourceTree = "<group>"; };
+		52F528AA2587345400C7B88C /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		52F528AE258736E100C7B88C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		52F528B62587451300C7B88C /* UnsplashSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 			children = (
 				52562B232583B2BE006FF4CA /* UnsplashService.swift */,
 				52562B292583B344006FF4CA /* UnsplashListService.swift */,
+				52F528B62587451300C7B88C /* UnsplashSearchService.swift */,
 				52562B312583D57C006FF4CA /* ImageLoadOperator.swift */,
 				52562B402584A3B9006FF4CA /* NetworkManager.swift */,
 				52562B482584A57E006FF4CA /* UnsplashRequest.swift */,
@@ -315,6 +322,7 @@
 				52AA3475258264E300A61F23 /* MainViewController.swift */,
 				52A21FFB25864CC90035547B /* PageViewController.swift */,
 				52A22003258657DA0035547B /* DetailViewController.swift */,
+				52F528AE258736E100C7B88C /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 				52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */,
 				52A21FFF25864CF70035547B /* PageViewControllerTests.swift */,
 				52A220142586620E0035547B /* DetailViewControllerTests.swift */,
+				52F528AA2587345400C7B88C /* SearchViewControllerTests.swift */,
 			);
 			path = Contollers;
 			sourceTree = "<group>";
@@ -490,12 +499,14 @@
 				52AA3476258264E300A61F23 /* MainViewController.swift in Sources */,
 				52A21FFC25864CC90035547B /* PageViewController.swift in Sources */,
 				52A2200B258659840035547B /* PageViewModel.swift in Sources */,
+				52F528B72587451300C7B88C /* UnsplashSearchService.swift in Sources */,
 				52A22004258657DA0035547B /* DetailViewController.swift in Sources */,
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
 				52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */,
 				5277A6E72586EEB50039F165 /* ListPresentingAnimator.swift in Sources */,
 				52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */,
+				52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */,
 				52A220192586632F0035547B /* DetailViewModel.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
@@ -533,6 +544,7 @@
 				5277A6EE2586F5960039F165 /* ListPreseningAnimatorTests.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */,
+				52F528AB2587345400C7B88C /* SearchViewControllerTests.swift in Sources */,
 				52A21FE32585DC340035547B /* ImageCacheManagerTests.swift in Sources */,
 				52A21FD72585C80C0035547B /* ImageLoadOperationTests.swift in Sources */,
 				52CD568D2583145200DA6387 /* ListViewModelStub.swift in Sources */,

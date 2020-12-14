@@ -17,6 +17,7 @@ class ListViewModelStub: IListViewModel {
     var photoImage = UIImage()
     var chagedHandler: ( (Range<Int>)->() )?
     var photoImageSize = CGSize(width: 100, height: 200)
+    var paramQuery = ""
     
     
     func fetchDatas() {
@@ -60,5 +61,13 @@ class ListViewModelStub: IListViewModel {
         wasCalled += "called \(#function)"
         paramIndexPath = indexPath
         return photoImageSize
+    }
+}
+
+
+extension ListViewModelStub: ISearchViewModel {
+    func fetchDatas(query: String) {
+        wasCalled += "called \(#function)"
+        paramQuery = query
     }
 }

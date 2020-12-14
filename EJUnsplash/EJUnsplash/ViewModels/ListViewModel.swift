@@ -21,6 +21,10 @@ protocol IListViewModel {
     func photoImageSizeForRowAt(indexPath: IndexPath) -> CGSize
 }
 
+protocol ISearchViewModel: IListViewModel {
+    func fetchDatas(query: String)
+}
+
 
 class ListViewModel: IListViewModel {
     static let preFetchingCount = 5
@@ -122,5 +126,12 @@ class ListViewModel: IListViewModel {
     
     func photoImageSizeForRowAt(indexPath: IndexPath) -> CGSize {
         return photoDatas[indexPath.row].size
+    }
+}
+
+
+extension ListViewModel: ISearchViewModel {
+    func fetchDatas(query: String) {
+        
     }
 }
