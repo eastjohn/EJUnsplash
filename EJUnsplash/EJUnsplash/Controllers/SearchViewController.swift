@@ -55,6 +55,18 @@ class SearchViewController: UIViewController {
             tableView.insertRows(at: range.map { IndexPath(row: $0, section: 0) }, with: .none)
         }
     }
+    
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        if let detailViewController = (presentedViewController as? PageViewController)?.viewControllers?.first as? DetailViewController {
+            let indexPath = IndexPath(row: detailViewController.index, section: 0)
+            tableView.scrollToRow(at: IndexPath(row: detailViewController.index, section: 0), at: .middle, animated: false)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                tableView.contentOffset.y = -(tableView.frame.height - cell.frame.height) / 2 + cell.frame.minY
+            }
+        }
+        super.dismiss(animated: flag, completion: completion)
+    }
 }
 
 

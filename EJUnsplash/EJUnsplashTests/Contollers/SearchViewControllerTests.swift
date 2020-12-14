@@ -388,23 +388,23 @@ class SearchViewControllerTests: XCTestCase {
 
 
     // TODO: UnsplashSearchService 구현 완료한 후에 테스트하기
-//    func testPageViewControllerDismiss_ThenChangeScrollOfTableView() {
-//        givenHasPhotoDatasAndIncludeInWindow(count: 20)
-//        sut.tableView.reloadData()
-//        let index = 15
-//        let pageViewController = PageViewController.createFromStoryboard(unsplashService: UnsplashServiceStub())!
-//        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: index)!
-//        pageViewController.setViewControllers([detailViewController], direction: .forward, animated: false, completion: nil)
-//        sut.present(pageViewController, animated: false, completion: nil)
-//
-//
-//        sut.dismiss(animated: false, completion: nil)
-//
-//
-//        let cell = sut.tableView.cellForRow(at: IndexPath(row: index, section: 0))!
-//        XCTAssertEqual(sut.tableView.contentOffset.y, cell.frame.minY - (sut.tableView.frame.height - cell.frame.height) / 2, accuracy: 0.1)
-//    }
-//
-//
+    func testPageViewControllerDismiss_ThenChangeScrollOfTableView() {
+        givenHasPhotoDatasAndIncludeInWindow(count: 20)
+        sut.tableView.reloadData()
+        let index = 15
+        let pageViewController = PageViewController.createFromStoryboard(unsplashService: UnsplashServiceStub())!
+        let detailViewController = DetailViewController.createFromStoryboard(photoInfo: PhotoInfo(name: "", url: nil, size: CGSize()), index: index)!
+        pageViewController.setViewControllers([detailViewController], direction: .forward, animated: false, completion: nil)
+        sut.present(pageViewController, animated: false, completion: nil)
+
+
+        sut.dismiss(animated: false, completion: nil)
+
+
+        let cell = sut.tableView.cellForRow(at: IndexPath(row: index, section: 0))!
+        XCTAssertEqual(sut.tableView.contentOffset.y, cell.frame.minY - (sut.tableView.frame.height - cell.frame.height) / 2, accuracy: 0.1)
+    }
+
+
 
 }
