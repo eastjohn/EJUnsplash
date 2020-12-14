@@ -51,6 +51,8 @@
 		52A2202F2586843A0035547B /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2202E2586843A0035547B /* DetailViewModelTests.swift */; };
 		52A220352587A8530035547B /* Search1.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A220342587A8530035547B /* Search1.json */; };
 		52A220392587A8990035547B /* Search2.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A220382587A8990035547B /* Search2.json */; };
+		52A2203D2587BCF10035547B /* StickyHeaderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2203C2587BCF10035547B /* StickyHeaderViewModelTests.swift */; };
+		52A220412587BECD0035547B /* UnsplashRandomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A220402587BECD0035547B /* UnsplashRandomService.swift */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -129,6 +131,8 @@
 		52A2202E2586843A0035547B /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		52A220342587A8530035547B /* Search1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Search1.json; sourceTree = "<group>"; };
 		52A220382587A8990035547B /* Search2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Search2.json; sourceTree = "<group>"; };
+		52A2203C2587BCF10035547B /* StickyHeaderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModelTests.swift; sourceTree = "<group>"; };
+		52A220402587BECD0035547B /* UnsplashRandomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRandomService.swift; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				52562B1C2583A9D1006FF4CA /* ListViewModelTests.swift */,
 				52A2201C25866BD50035547B /* PageViewModelTests.swift */,
 				52A2202E2586843A0035547B /* DetailViewModelTests.swift */,
+				52A2203C2587BCF10035547B /* StickyHeaderViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				52562B232583B2BE006FF4CA /* UnsplashService.swift */,
 				52562B292583B344006FF4CA /* UnsplashListService.swift */,
 				52F528B62587451300C7B88C /* UnsplashSearchService.swift */,
+				52A220402587BECD0035547B /* UnsplashRandomService.swift */,
 				52562B312583D57C006FF4CA /* ImageLoadOperator.swift */,
 				52562B402584A3B9006FF4CA /* NetworkManager.swift */,
 				52562B482584A57E006FF4CA /* UnsplashRequest.swift */,
@@ -523,6 +529,7 @@
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 				52562B242583B2BE006FF4CA /* UnsplashService.swift in Sources */,
 				52562B492584A57E006FF4CA /* UnsplashRequest.swift in Sources */,
+				52A220412587BECD0035547B /* UnsplashRandomService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +542,7 @@
 				52A2201125865DD30035547B /* PageViewModelStub.swift in Sources */,
 				52A2202F2586843A0035547B /* DetailViewModelTests.swift in Sources */,
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
+				52A2203D2587BCF10035547B /* StickyHeaderViewModelTests.swift in Sources */,
 				52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */,
 				52F528BD258757C100C7B88C /* UnsplashSearchServiceTests.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
