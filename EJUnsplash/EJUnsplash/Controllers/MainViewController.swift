@@ -92,12 +92,13 @@ extension MainViewController: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: 아래코드는 테스트 코드로 다시 작성해야한다.
-        let pageViewController = PageViewController.createFromStoryboard(unsplashService: (viewModel as? ListViewModel)!.unsplashService)
-        pageViewController?.setPhotoDatas((viewModel as? ListViewModel)!.photoDatas)
-        pageViewController?.selectedIndex = indexPath.row
-        pageViewController?.modalPresentationStyle = .fullScreen
-        present(pageViewController!, animated: true, completion: nil)
+        guard let viewModel = viewModel as? ListViewModel,
+              let pageViewController = PageViewController.createFromStoryboard(unsplashService: viewModel.unsplashService) else { return }
+        pageViewController.setPhotoDatas(viewModel.photoDatas)
+        pageViewController.selectedIndex = indexPath.row
+        pageViewController.modalPresentationStyle = .fullScreen
+        pageViewController.transitioningDelegate = self
+        present(pageViewController, animated: true, completion: nil)
     }
 }
 
@@ -110,6 +111,18 @@ extension MainViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         viewModel.cancelPrefetchingForRowsAt(indexPaths: indexPaths)
+    }
+}
+
+
+extension MainViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+              let cell = tableView.cellForRow(at: indexPath),
+              let frame = cell.superview?.convert(cell.frame, to: nil) else { return nil }
+        let animator = ListPresentingAnimator()
+        animator.originalFrame = frame
+        return animator
     }
 }
 

@@ -27,6 +27,9 @@
 		52562B732585253B006FF4CA /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B722585253B006FF4CA /* NetworkManagerTests.swift */; };
 		52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B78258527D9006FF4CA /* MockURLSession.swift */; };
 		52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */; };
+		5277A6E72586EEB50039F165 /* ListPresentingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277A6E62586EEB50039F165 /* ListPresentingAnimator.swift */; };
+		5277A6EE2586F5960039F165 /* ListPreseningAnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277A6ED2586F5960039F165 /* ListPreseningAnimatorTests.swift */; };
+		5277A6F42586F77E0039F165 /* MockControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277A6F32586F77E0039F165 /* MockControllerContext.swift */; };
 		52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FD225852C510035547B /* UnsplashRequestTests.swift */; };
 		52A21FD72585C80C0035547B /* ImageLoadOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */; };
 		52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21FDA2585CC870035547B /* ImageCacheManager.swift */; };
@@ -96,6 +99,9 @@
 		52562B722585253B006FF4CA /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		52562B78258527D9006FF4CA /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		52562B7C258528EF006FF4CA /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		5277A6E62586EEB50039F165 /* ListPresentingAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresentingAnimator.swift; sourceTree = "<group>"; };
+		5277A6ED2586F5960039F165 /* ListPreseningAnimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPreseningAnimatorTests.swift; sourceTree = "<group>"; };
+		5277A6F32586F77E0039F165 /* MockControllerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockControllerContext.swift; sourceTree = "<group>"; };
 		52A21FD225852C510035547B /* UnsplashRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRequestTests.swift; sourceTree = "<group>"; };
 		52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperationTests.swift; sourceTree = "<group>"; };
 		52A21FDA2585CC870035547B /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
@@ -216,6 +222,22 @@
 			path = JsonDatas;
 			sourceTree = "<group>";
 		};
+		5277A6E52586EE7C0039F165 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5277A6E62586EEB50039F165 /* ListPresentingAnimator.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		5277A6EC2586F5790039F165 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5277A6ED2586F5960039F165 /* ListPreseningAnimatorTests.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		52A21FE62585E4320035547B /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +271,7 @@
 				52AA34C72582755B00A61F23 /* Controllers */,
 				52AA34C025826F0500A61F23 /* Views */,
 				52CD567A2582FBBA00DA6387 /* ViewModels */,
+				5277A6E52586EE7C0039F165 /* Transition */,
 				52562B222583B29D006FF4CA /* Service */,
 				52AA3471258264E300A61F23 /* AppDelegate.swift */,
 				52AA3477258264E300A61F23 /* Main.storyboard */,
@@ -268,6 +291,7 @@
 				52AA34C82582757700A61F23 /* Contollers */,
 				52AA34CB25827C6C00A61F23 /* Views */,
 				52562B1B2583A9A2006FF4CA /* ViewModels */,
+				5277A6EC2586F5790039F165 /* Transition */,
 				52562B352583D775006FF4CA /* Service */,
 				52CD567F2583013500DA6387 /* Mock */,
 				52562B1725828E83006FF4CA /* Helpers */,
@@ -338,6 +362,7 @@
 				52A21FDE2585D49B0035547B /* ImageCacheManagerStub.swift */,
 				52A2201025865DD30035547B /* PageViewModelStub.swift */,
 				52A2202425867F640035547B /* DetailViewModelStub.swift */,
+				5277A6F32586F77E0039F165 /* MockControllerContext.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -469,6 +494,7 @@
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
 				52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */,
+				5277A6E72586EEB50039F165 /* ListPresentingAnimator.swift in Sources */,
 				52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */,
 				52A220192586632F0035547B /* DetailViewModel.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
@@ -493,6 +519,7 @@
 				52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */,
 				52CD569125831CFD00DA6387 /* MockTableView.swift in Sources */,
 				52562B732585253B006FF4CA /* NetworkManagerTests.swift in Sources */,
+				5277A6F42586F77E0039F165 /* MockControllerContext.swift in Sources */,
 				52A2200025864CF70035547B /* PageViewControllerTests.swift in Sources */,
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52562B3D258499FE006FF4CA /* UnsplashListServiceTests.swift in Sources */,
@@ -503,6 +530,7 @@
 				52A220152586620E0035547B /* DetailViewControllerTests.swift in Sources */,
 				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
 				52A21FF02585F8FE0035547B /* ImageLoader.swift in Sources */,
+				5277A6EE2586F5960039F165 /* ListPreseningAnimatorTests.swift in Sources */,
 				52562B1D2583A9D1006FF4CA /* ListViewModelTests.swift in Sources */,
 				52A21FD325852C510035547B /* UnsplashRequestTests.swift in Sources */,
 				52A21FE32585DC340035547B /* ImageCacheManagerTests.swift in Sources */,

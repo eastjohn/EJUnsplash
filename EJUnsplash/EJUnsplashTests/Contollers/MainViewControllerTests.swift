@@ -40,6 +40,16 @@ class MainViewControllerTests: XCTestCase {
     }
     
     
+    func givenHasPhotoDatasAndIncludeInWindow() {
+        givenLoadedView()
+        let viewModel = sut.viewModel as! ListViewModel
+        viewModel.photoDatas = [PhotoInfo(name: "test1", url: nil, size: CGSize(width: 10, height: 20)),
+                                PhotoInfo(name: "test2", url: nil, size: CGSize(width: 10, height: 20)),
+                                PhotoInfo(name: "test3", url: nil, size: CGSize(width: 10, height: 20))]
+        UIApplication.shared.windows[0].rootViewController = sut
+    }
+    
+    
     // MARK: - Tests
     func testCreateViewController() throws {
         XCTAssertNotNil(sut)
@@ -296,5 +306,36 @@ class MainViewControllerTests: XCTestCase {
         XCTAssertEqual(result, expectedHeight)
         XCTAssertEqual(viewModelStub.paramIndexPath, expectedIndexPath)
         XCTAssertTrue(viewModelStub.wasCalled.contains(expectedWasCalled))
+    }
+    
+    
+    func testTableViewDidSelectRowAt_ThenPresentPageViewController() {
+        givenHasPhotoDatasAndIncludeInWindow()
+        let expectedIndexPath = IndexPath(row: 2, section: 0)
+        let viewModel = sut.viewModel as! ListViewModel
+        
+        sut.tableView(sut.tableView, didSelectRowAt: expectedIndexPath)
+        
+        let pageViewController = sut.presentedViewController as! PageViewController
+        XCTAssertTrue((pageViewController.viewModel as? PageViewModel)?.unsplashService === viewModel.unsplashService)
+        XCTAssertEqual((pageViewController.viewModel as? PageViewModel)?.photoDatas, viewModel.photoDatas)
+        XCTAssertEqual(pageViewController.selectedIndex, expectedIndexPath.row)
+        XCTAssertTrue(pageViewController.transitioningDelegate === sut)
+    }
+    
+    
+    func testAnimationControllerForPresented_ThenReturnListPresentingAnimator() {
+        givenHasPhotoDatasAndIncludeInWindow()
+        let pageViewController = PageViewController.createFromStoryboard(unsplashService: UnsplashServiceStub())!
+        let indexPath = IndexPath(row: 1, section: 0)
+        sut.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+        let selectedCell = sut.tableView.cellForRow(at: indexPath)!
+        let expectedOriginalFrame = selectedCell.superview!.convert(selectedCell.frame, to: nil)
+        
+        
+        let result = sut.animationController(forPresented: pageViewController, presenting: sut, source: sut)
+        
+        XCTAssertTrue(result is ListPresentingAnimator)
+        XCTAssertEqual((result as? ListPresentingAnimator)?.originalFrame, expectedOriginalFrame)
     }
 }
