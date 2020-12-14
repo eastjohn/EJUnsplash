@@ -48,6 +48,8 @@ class UnsplashSearchService: UnsplashService {
     
     func fetchDatas(query: String) {
         self.query = query
+        isFetching = false
+        canFetch = true
         fetchDatas()
     }
     

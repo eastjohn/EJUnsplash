@@ -286,4 +286,13 @@ class ListViewModelTests: XCTestCase {
         
         XCTAssertTrue(unsplashServiceStub.wasCalled.contains(expectedWasCalled))
     }
+    
+    
+    func testFetchDatasWithQuery_ThenInitializePhotoDatas() {
+        sut.photoDatas = [PhotoInfo(name: "test", url: nil, size: CGSize())]
+        
+        sut.fetchDatas(query: "test")
+        
+        XCTAssertEqual(sut.photoDatas.count, 0)
+    }
 }

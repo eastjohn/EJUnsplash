@@ -106,6 +106,17 @@ class UnsplashSearchServiceTests: XCTestCase {
     }
     
     
+    func testFetchDatasWithQuery_ThenInitailizeState() {
+        sut.isFetching = true
+        sut.canFetch = false
+        
+        sut.fetchDatas(query: "")
+        
+        XCTAssertFalse(sut.isFetching)
+        XCTAssertTrue(sut.canFetch)
+    }
+    
+    
     func whenFetchDatas_ThenCallSendRequestOfNetworkManager(expectedRequest: UnsplashRequest) {
         let expectedWasCalled = "called sendRequest(_:completionHandler:)"
         sut.query = "test"

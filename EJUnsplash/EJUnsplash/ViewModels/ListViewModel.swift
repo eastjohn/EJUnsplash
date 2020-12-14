@@ -132,6 +132,7 @@ class ListViewModel: IListViewModel {
 
 extension ListViewModel: ISearchViewModel {
     func fetchDatas(query: String) {
+        photoDatas.removeAll()
         unsplashService.fetchDatas(query: query)
     }
 }
