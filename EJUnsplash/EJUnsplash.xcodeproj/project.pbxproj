@@ -53,6 +53,8 @@
 		52A220392587A8990035547B /* Search2.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A220382587A8990035547B /* Search2.json */; };
 		52A2203D2587BCF10035547B /* StickyHeaderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2203C2587BCF10035547B /* StickyHeaderViewModelTests.swift */; };
 		52A220412587BECD0035547B /* UnsplashRandomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A220402587BECD0035547B /* UnsplashRandomService.swift */; };
+		52A220472587D0770035547B /* UnsplashRandomServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A220462587D0770035547B /* UnsplashRandomServiceTests.swift */; };
+		52A2204D2587D4B70035547B /* random.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A2204C2587D4B70035547B /* random.json */; };
 		52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3471258264E300A61F23 /* AppDelegate.swift */; };
 		52AA3476258264E300A61F23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA3475258264E300A61F23 /* MainViewController.swift */; };
 		52AA3479258264E300A61F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA3477258264E300A61F23 /* Main.storyboard */; };
@@ -133,6 +135,8 @@
 		52A220382587A8990035547B /* Search2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Search2.json; sourceTree = "<group>"; };
 		52A2203C2587BCF10035547B /* StickyHeaderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModelTests.swift; sourceTree = "<group>"; };
 		52A220402587BECD0035547B /* UnsplashRandomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRandomService.swift; sourceTree = "<group>"; };
+		52A220462587D0770035547B /* UnsplashRandomServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRandomServiceTests.swift; sourceTree = "<group>"; };
+		52A2204C2587D4B70035547B /* random.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = random.json; sourceTree = "<group>"; };
 		52AA346E258264E300A61F23 /* EJUnsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJUnsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA3471258264E300A61F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA3475258264E300A61F23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */,
 				52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */,
 				52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */,
+				52A220462587D0770035547B /* UnsplashRandomServiceTests.swift */,
 				52562B722585253B006FF4CA /* NetworkManagerTests.swift */,
 				52A21FD225852C510035547B /* UnsplashRequestTests.swift */,
 				52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */,
@@ -240,6 +245,7 @@
 				52562B662585077D006FF4CA /* page5.json */,
 				52A220342587A8530035547B /* Search1.json */,
 				52A220382587A8990035547B /* Search2.json */,
+				52A2204C2587D4B70035547B /* random.json */,
 			);
 			path = JsonDatas;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				52A220352587A8530035547B /* Search1.json in Resources */,
 				52562B672585077D006FF4CA /* page5.json in Resources */,
 				52562B5225850537006FF4CA /* page1.json in Resources */,
+				52A2204D2587D4B70035547B /* random.json in Resources */,
 				52562B5D2585075A006FF4CA /* page3.json in Resources */,
 				52A220392587A8990035547B /* Search2.json in Resources */,
 				52562B582585059F006FF4CA /* page2.json in Resources */,
@@ -559,6 +566,7 @@
 				52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
 				52A220152586620E0035547B /* DetailViewControllerTests.swift in Sources */,
+				52A220472587D0770035547B /* UnsplashRandomServiceTests.swift in Sources */,
 				52562B6B2585095B006FF4CA /* JsonDataCreator.swift in Sources */,
 				52A21FF02585F8FE0035547B /* ImageLoader.swift in Sources */,
 				5277A6EE2586F5960039F165 /* ListPreseningAnimatorTests.swift in Sources */,
