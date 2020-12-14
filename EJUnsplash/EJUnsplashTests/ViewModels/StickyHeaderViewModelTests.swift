@@ -14,9 +14,8 @@ class StickyHeaderViewModelTests: XCTestCase {
     private var imageCacheManager: ImageCacheManager!
     
     override func setUpWithError() throws {
-        sut = StickyHeaderViewModel()
         unsplashServiceStub = UnsplashServiceStub()
-        sut.unsplashService = unsplashServiceStub
+        sut = StickyHeaderViewModel(service: unsplashServiceStub)
         imageCacheManager = ImageCacheManager()
         sut.imageCacheManager = imageCacheManager
         imageCacheManager.imageCache.setObject(UIImage(), forKey: NSURL(string: "http://test1.com")!)
@@ -39,14 +38,8 @@ class StickyHeaderViewModelTests: XCTestCase {
 
     
     // MARK: - Tests
-    func testConfirmUnsplashService_WhenCreated() throws {
-        sut = StickyHeaderViewModel()
-        XCTAssertTrue(sut.unsplashService is UnsplashRandomService)
-    }
-    
-    
     func testConfirmImageCacheManager_WhenCreated() throws {
-        sut = StickyHeaderViewModel()
+        sut = StickyHeaderViewModel(service: unsplashServiceStub)
         XCTAssertTrue(sut.imageCacheManager === ImageCacheManager.shared)
     }
     
@@ -131,5 +124,14 @@ class StickyHeaderViewModelTests: XCTestCase {
     func testLoadImage_WhenIndexIsLast_ThenCallNextIndexIsFirstIndex() {
         let result = whenReceivePhotoDatas(expectedFulfillmentCount: 4)
         XCTAssertTrue(result === self.imageCacheManager.imageCache.object(forKey: self.sut.photoDatas[0].url! as NSURL))
+    }
+    
+    
+    func testFetchDatas_ThenCallFetchDatasOfUnsplashService() {
+        let expectedWasCalled = "called fetchDatas()"
+        
+        sut.fetchDatas()
+        
+        XCTAssertTrue(unsplashServiceStub.wasCalled.contains(expectedWasCalled))
     }
 }

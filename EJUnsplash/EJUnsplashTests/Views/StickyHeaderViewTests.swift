@@ -86,6 +86,7 @@ class StickyHeaderViewTests: XCTestCase {
     
     func testExistViewModel_WhenCreated() {
         XCTAssertTrue(sut.viewModel is StickyHeaderViewModel)
+        XCTAssertTrue((sut.viewModel as! StickyHeaderViewModel).unsplashService is UnsplashRandomService)
     }
     
     
@@ -100,6 +101,19 @@ class StickyHeaderViewTests: XCTestCase {
 
 
         XCTAssertEqual(imageView.image, expectedImage)
+    }
+    
+    
+    func testSetBackgroundImageView_ThenCallFetchDatasOfViewModel() {
+        let expectedWasCalled = "called fetchDatas"
+        let imageView = UIImageView()
+        givenViewModelStub()
+
+
+        sut.backgroundImageView = imageView
+
+
+        XCTAssertTrue(viewModelStub.wasCalled.contains(expectedWasCalled))
     }
     
     

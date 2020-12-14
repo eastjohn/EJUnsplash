@@ -57,7 +57,7 @@ class NetworkManagerTests: XCTestCase {
             self.session.dataTask?.completionHandler(data, nil, error)
         }
         
-        wait(for: [expection], timeout: 2)
+        wait(for: [expection], timeout: 3)
     }
     
     

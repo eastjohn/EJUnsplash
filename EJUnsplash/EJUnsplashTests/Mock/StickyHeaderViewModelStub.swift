@@ -9,6 +9,8 @@ import UIKit
 @testable import EJUnsplash
 
 class StickyHeaderViewModelStub: IStickyHeaderViewModel {
+    var wasCalled = ""
+    
     var completionHandler: ( (UIImage)->() )?
     
     
@@ -19,5 +21,9 @@ class StickyHeaderViewModelStub: IStickyHeaderViewModel {
     
     func updateImage(_ image: UIImage) {
         completionHandler?(image)
+    }
+    
+    func fetchDatas() {
+        wasCalled += "called \(#function)"
     }
 }

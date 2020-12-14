@@ -14,6 +14,7 @@ class StickyHeaderView: UIView {
     @IBOutlet weak var backgroundImageView: UIImageView! {
         didSet {
             viewModel.bindBackgroundImage { [weak self] in self?.backgroundImageView.image = $0 }
+            viewModel.fetchDatas()
         }
     }
     @IBOutlet weak var searchBar: UISearchBar! {
@@ -22,7 +23,7 @@ class StickyHeaderView: UIView {
         }
     }
     
-    var viewModel: IStickyHeaderViewModel = StickyHeaderViewModel()
+    var viewModel: IStickyHeaderViewModel = StickyHeaderViewModel(service: UnsplashRandomService())
     
     
     override func layoutSubviews() {

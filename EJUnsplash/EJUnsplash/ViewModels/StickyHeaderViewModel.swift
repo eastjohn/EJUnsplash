@@ -10,17 +10,12 @@ import UIKit
 
 protocol IStickyHeaderViewModel {
     func bindBackgroundImage(completionHandler: @escaping (UIImage)->())
+    func fetchDatas()
 }
 
 
 class StickyHeaderViewModel : IStickyHeaderViewModel {
-    var unsplashService: UnsplashService = UnsplashRandomService() {
-        didSet {
-            unsplashService.addBindingUpdateDatas { [weak self] photoInfos in
-                self?.photoDatas = photoInfos
-            }
-        }
-    }
+    var unsplashService: UnsplashService = UnsplashRandomService()
     var imageCacheManager: IImageCacheManager = ImageCacheManager.shared
     var photoDatas = [PhotoInfo]() {
         didSet {
@@ -30,6 +25,13 @@ class StickyHeaderViewModel : IStickyHeaderViewModel {
     }
     var updateHandler: ( (UIImage)->() )?
     var timeInterval = TimeInterval(3)
+    
+    init(service: UnsplashService) {
+        unsplashService = service
+        unsplashService.addBindingUpdateDatas { [weak self] photoInfos in
+            self?.photoDatas = photoInfos
+        }
+    }
     
     
     func bindBackgroundImage(completionHandler: @escaping (UIImage) -> ()) {
@@ -48,6 +50,11 @@ class StickyHeaderViewModel : IStickyHeaderViewModel {
                 }
             }
         }
+    }
+    
+    
+    func fetchDatas() {
+        unsplashService.fetchDatas()
     }
     
 }
