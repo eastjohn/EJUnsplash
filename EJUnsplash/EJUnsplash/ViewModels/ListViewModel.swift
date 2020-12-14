@@ -132,6 +132,6 @@ class ListViewModel: IListViewModel {
 
 extension ListViewModel: ISearchViewModel {
     func fetchDatas(query: String) {
-        
+        unsplashService.fetchDatas(query: query)
     }
 }

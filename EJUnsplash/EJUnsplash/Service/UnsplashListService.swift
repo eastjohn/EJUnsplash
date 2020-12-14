@@ -22,7 +22,8 @@ class UnsplashListService: UnsplashService {
     }
     
     func removeBindingUpdateDatas() {
-        
+        guard updateHandlers.count > 0 else { return }
+        updateHandlers.removeLast()
     }
     
     func fetchDatas() {
@@ -37,6 +38,10 @@ class UnsplashListService: UnsplashService {
         networkManager.sendRequest(request) { [weak self] data, error in
             self?.receiveData(data)
         }
+    }
+    
+    
+    func fetchDatas(query: String) {
     }
     
     

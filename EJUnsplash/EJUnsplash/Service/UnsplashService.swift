@@ -11,4 +11,5 @@ protocol UnsplashService: class {
     func addBindingUpdateDatas(updateHandler: @escaping ([PhotoInfo])->())
     func removeBindingUpdateDatas()
     func fetchDatas()
+    func fetchDatas(query: String)
 }

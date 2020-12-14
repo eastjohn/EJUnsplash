@@ -24,4 +24,8 @@ class UnsplashServiceStub: UnsplashService {
     func fetchDatas() {
         wasCalled += "called \(#function)"
     }
+    
+    func fetchDatas(query: String) {
+        wasCalled += "called \(#function)"
+    }
 }

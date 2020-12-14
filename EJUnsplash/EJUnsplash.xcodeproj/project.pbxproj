@@ -69,6 +69,7 @@
 		52F528AB2587345400C7B88C /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528AA2587345400C7B88C /* SearchViewControllerTests.swift */; };
 		52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528AE258736E100C7B88C /* SearchViewController.swift */; };
 		52F528B72587451300C7B88C /* UnsplashSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528B62587451300C7B88C /* UnsplashSearchService.swift */; };
+		52F528BD258757C100C7B88C /* UnsplashSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		52F528AA2587345400C7B88C /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		52F528AE258736E100C7B88C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52F528B62587451300C7B88C /* UnsplashSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchService.swift; sourceTree = "<group>"; };
+		52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				52562B362583D7A4006FF4CA /* ImageLoadOperatorTests.swift */,
 				52562B3C258499FE006FF4CA /* UnsplashListServiceTests.swift */,
+				52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */,
 				52562B722585253B006FF4CA /* NetworkManagerTests.swift */,
 				52A21FD225852C510035547B /* UnsplashRequestTests.swift */,
 				52A21FD62585C80C0035547B /* ImageLoadOperationTests.swift */,
@@ -525,6 +528,7 @@
 				52A2202F2586843A0035547B /* DetailViewModelTests.swift in Sources */,
 				52CD56A42583352000DA6387 /* UICreator.swift in Sources */,
 				52A21FDF2585D49B0035547B /* ImageCacheManagerStub.swift in Sources */,
+				52F528BD258757C100C7B88C /* UnsplashSearchServiceTests.swift in Sources */,
 				52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */,
 				52562B452584A4B0006FF4CA /* NetworkManagerStub.swift in Sources */,
 				52562B79258527D9006FF4CA /* MockURLSession.swift in Sources */,

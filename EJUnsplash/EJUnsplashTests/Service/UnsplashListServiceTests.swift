@@ -60,6 +60,30 @@ class UnsplashListServiceTests: XCTestCase {
     }
     
     
+    func testRemoveBindingUpdateDatas_ThenRemoveLastUpdateHandler() {
+        var wasCalled = ""
+        sut.addBindingUpdateDatas { _ in
+            wasCalled += "called first"
+        }
+        sut.addBindingUpdateDatas { _ in
+            wasCalled += "called second"
+        }
+        
+        
+        sut.removeBindingUpdateDatas()
+        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
+        
+        
+        XCTAssertEqual(sut.updateHandlers.count, 1)
+        XCTAssertEqual(wasCalled, "called first")
+    }
+    
+    
+    func testRemoveBindingUpdateDatas_WhenEmptyUpdateHandlers_ThenNotOccurFataError() {
+        sut.removeBindingUpdateDatas()
+    }
+    
+    
     func testCurrentPageIsZero_WhenCreated() {
         XCTAssertEqual(sut.currentPage, 0)
     }
