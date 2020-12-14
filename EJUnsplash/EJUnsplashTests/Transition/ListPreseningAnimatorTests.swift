@@ -38,7 +38,8 @@ class ListPreseningAnimatorTests: XCTestCase {
         let finalFrame = context.toView.frame
         let expectedWasCalled = "called layoutIfNeeded()"
         sut.originalFrame = CGRect(x: 20, y: 30, width: 100, height: 200)
-        UIApplication.shared.windows[0].rootViewController?.view.addSubview(context.containerView)
+        let window = UIWindow()
+        window.addSubview(context.containerView)
         
         var count = 0
         context.toView.completionHandler = { [weak self] in
