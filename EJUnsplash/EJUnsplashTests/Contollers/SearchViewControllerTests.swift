@@ -240,6 +240,8 @@ class SearchViewControllerTests: XCTestCase {
             let headerView = UIView()
             sut.headerView = headerView
             sut.tableView = tableView
+            let searchBar = UISearchBar()
+            sut.searchBar = searchBar
             sut.viewDidLoad()
 
             sut = nil

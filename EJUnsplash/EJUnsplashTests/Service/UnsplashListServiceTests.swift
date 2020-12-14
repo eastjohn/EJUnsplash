@@ -184,7 +184,7 @@ class UnsplashListServiceTests: XCTestCase {
             result = photoInfos
         }
         
-        let jsonData = JsonDataCreator.createHanOneData()
+        let jsonData = JsonDataCreator.createHasOneData()
         whenFetchData(jsonData: jsonData)
         
         XCTAssertEqual(result, [expectedPhotoData])
@@ -233,7 +233,7 @@ class UnsplashListServiceTests: XCTestCase {
     
     
     func testReceiveData_WhenPhotoDataCountIsLessThanPerPage_ThenCanFetchIsFalse() {
-        let jsonData = JsonDataCreator.createHanOneData()
+        let jsonData = JsonDataCreator.createHasOneData()
         whenFetchData(jsonData: jsonData)
         
         XCTAssertFalse(sut.canFetch)
@@ -266,7 +266,7 @@ class UnsplashListServiceTests: XCTestCase {
         
         sut.fetchDatas()
         sut = nil
-        networkManagerStub.completionHandler?(JsonDataCreator.createHanOneData(), nil)
+        networkManagerStub.completionHandler?(JsonDataCreator.createHasOneData(), nil)
         
         XCTAssertFalse(wasCalled)
     }
