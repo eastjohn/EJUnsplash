@@ -31,3 +31,19 @@ enum UnsplashParameterKey: String {
 enum UnsplashAccessKey {
     static let key = "XHNGmQXAeut64ask1a4EvAQhAg-OrlMoRu982Dt2aws"
 }
+
+
+enum UnsplashJsonParameterKey: String {
+    case user
+    case name
+    case urls
+    case small
+    case width
+    case height
+    case results
+}
+
+
+enum UnsplashHeaderKey: String {
+    case Authorization
+}

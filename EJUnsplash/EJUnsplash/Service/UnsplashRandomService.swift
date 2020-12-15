@@ -39,19 +39,9 @@ class UnsplashRandomService: UnsplashService {
         guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]] else { return }
         
         let phothDatas: [PhotoInfo] = jsonData.compactMap {
-            createPhotoInfo($0)
+            PhotoInfoFactory.createPhotoInfo(jsonDic: $0)
         }
         
         updateHandler?(phothDatas)
-    }
-    
-    
-    private func createPhotoInfo(_ aDic: [String: Any]) -> PhotoInfo? {
-        guard let name = (aDic["user"] as? [String: Any])?["name"] as? String else { return nil }
-        guard let urlString = (aDic["urls"] as? [String: String])?["small"] else { return nil }
-        guard let width = aDic["width"] as? Int else { return nil }
-        guard let height = aDic["height"] as? Int else { return nil }
-        
-        return PhotoInfo(name: name, url: URL(string: urlString), size: CGSize(width: width, height: height))
     }
 }

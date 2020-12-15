@@ -26,7 +26,7 @@ class UnsplashRequestTests: XCTestCase {
         let result = sut.createURLRequest()
         
         checkURL(url1: result!.url!.absoluteString, url2: expectedURLPath)
-        XCTAssertEqual(result?.allHTTPHeaderFields?["Authorization"], "Client-ID \(UnsplashAccessKey.key)")
+        XCTAssertEqual(result?.allHTTPHeaderFields?[UnsplashHeaderKey.Authorization.rawValue], "Client-ID \(UnsplashAccessKey.key)")
     }
     
     
@@ -37,7 +37,7 @@ class UnsplashRequestTests: XCTestCase {
         let result = sut.createURLRequest()
         
         XCTAssertEqual(result?.url?.absoluteString, expectedURLPath)
-        XCTAssertEqual(result?.allHTTPHeaderFields?["Authorization"], "Client-ID \(UnsplashAccessKey.key)")
+        XCTAssertEqual(result?.allHTTPHeaderFields?[UnsplashHeaderKey.Authorization.rawValue], "Client-ID \(UnsplashAccessKey.key)")
     }
     
     
@@ -48,7 +48,7 @@ class UnsplashRequestTests: XCTestCase {
         let result = sut.createURLRequest()
         
         checkURL(url1: result!.url!.absoluteString, url2: expectedURLPath)
-        XCTAssertEqual(result?.allHTTPHeaderFields?["Authorization"], "Client-ID \(UnsplashAccessKey.key)")
+        XCTAssertEqual(result?.allHTTPHeaderFields?[UnsplashHeaderKey.Authorization.rawValue], "Client-ID \(UnsplashAccessKey.key)")
     }
     
     

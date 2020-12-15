@@ -20,7 +20,7 @@ struct UnsplashRequest: Equatable {
         }
         guard let url = urlComponents.url else { return nil }
         var urlRequest = URLRequest(url: url)
-        urlRequest.allHTTPHeaderFields = ["Authorization": "Client-ID \(UnsplashAccessKey.key)"]
+        urlRequest.allHTTPHeaderFields = [UnsplashHeaderKey.Authorization.rawValue: "Client-ID \(UnsplashAccessKey.key)"]
         return urlRequest
     }
 }
