@@ -2,7 +2,7 @@
 //  ListPresentingAnimator.swift
 //  EJUnsplash
 //
-//  Created by 김요한 on 2020/12/14.
+//  Created by John on 2020/12/14.
 //
 
 import UIKit

@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     static let storyboardID = "DetailViewController"
-//    var url: URL?
+
     var index = -1
     var viewModel: IDetailViewModel!
     

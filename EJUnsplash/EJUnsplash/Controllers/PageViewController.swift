@@ -43,9 +43,6 @@ class PageViewController: UIPageViewController {
 }
 
 
-//extension PageViewController: UIPageViewControllerDelegate {
-//    
-//}
 
 
 extension PageViewController: UIPageViewControllerDataSource {
