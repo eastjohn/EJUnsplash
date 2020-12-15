@@ -11,7 +11,7 @@ import UIKit
 protocol IListViewModel {
     var dataCount: Int { get }
     
-    mutating func bindPhotoDatas(changedHandler: @escaping (Range<Int>)->())
+    func bindPhotoDatas(changedHandler: @escaping (Range<Int>)->())
     func fetchDatas()
     func updatePhotoInfo(for indexPath: IndexPath, updateHandler: (PhotoInfo)->(), completionLoadedPhotoImageHandler: @escaping (UIImage)->() )
     

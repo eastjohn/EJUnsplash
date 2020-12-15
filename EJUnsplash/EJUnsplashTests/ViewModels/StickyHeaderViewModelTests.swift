@@ -84,7 +84,6 @@ class StickyHeaderViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         DispatchQueue.global().async {
-//            self.givenHasPhotoDatas()
             self.unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: URL(string: "http://test1.com"), size: CGSize())])
         }
         
@@ -109,7 +108,7 @@ class StickyHeaderViewModelTests: XCTestCase {
 
         givenHasPhotoDatas()
         
-        wait(for: [expectation], timeout: 2)
+        wait(for: [expectation], timeout: 3)
         
         return result
     }

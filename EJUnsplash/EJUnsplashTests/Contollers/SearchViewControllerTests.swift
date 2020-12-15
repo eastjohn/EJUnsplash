@@ -41,7 +41,7 @@ class SearchViewControllerTests: XCTestCase {
     func givenHasViewModelSub() {
         givenLoadedView()
         viewModelStub = ListViewModelStub()
-        sut.viewModel = viewModelStub
+        sut.searchViewModel = viewModelStub
     }
     
     

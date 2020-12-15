@@ -76,6 +76,7 @@
 		52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528AE258736E100C7B88C /* SearchViewController.swift */; };
 		52F528B72587451300C7B88C /* UnsplashSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528B62587451300C7B88C /* UnsplashSearchService.swift */; };
 		52F528BD258757C100C7B88C /* UnsplashSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */; };
+		52F528C5258848A800C7B88C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528C4258848A800C7B88C /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		52F528AE258736E100C7B88C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52F528B62587451300C7B88C /* UnsplashSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchService.swift; sourceTree = "<group>"; };
 		52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchServiceTests.swift; sourceTree = "<group>"; };
+		52F528C4258848A800C7B88C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +346,7 @@
 				52A21FFB25864CC90035547B /* PageViewController.swift */,
 				52A22003258657DA0035547B /* DetailViewController.swift */,
 				52F528AE258736E100C7B88C /* SearchViewController.swift */,
+				52F528C4258848A800C7B88C /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */,
 				52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */,
 				52A21FDB2585CC870035547B /* ImageCacheManager.swift in Sources */,
+				52F528C5258848A800C7B88C /* ListViewController.swift in Sources */,
 				5277A6E72586EEB50039F165 /* ListPresentingAnimator.swift in Sources */,
 				52562B4D2584A694006FF4CA /* UnsplashAPI.swift in Sources */,
 				52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */,

@@ -38,7 +38,7 @@ class MainViewControllerTests: XCTestCase {
     
     func givenHasViewModelSub() {
         givenLoadedView()
-        sut.viewModel = viewModelStub
+        sut.mainViewModel = viewModelStub
     }
     
     
