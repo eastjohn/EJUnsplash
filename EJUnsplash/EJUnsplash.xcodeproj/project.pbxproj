@@ -77,6 +77,7 @@
 		52F528B72587451300C7B88C /* UnsplashSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528B62587451300C7B88C /* UnsplashSearchService.swift */; };
 		52F528BD258757C100C7B88C /* UnsplashSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */; };
 		52F528C5258848A800C7B88C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528C4258848A800C7B88C /* ListViewController.swift */; };
+		52F528CB25885D9600C7B88C /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F528CA25885D9600C7B88C /* ListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		52F528B62587451300C7B88C /* UnsplashSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchService.swift; sourceTree = "<group>"; };
 		52F528BC258757C100C7B88C /* UnsplashSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchServiceTests.swift; sourceTree = "<group>"; };
 		52F528C4258848A800C7B88C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		52F528CA25885D9600C7B88C /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 		52AA34C82582757700A61F23 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				52F528CA25885D9600C7B88C /* ListViewControllerTests.swift */,
 				52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */,
 				52A21FFF25864CF70035547B /* PageViewControllerTests.swift */,
 				52A220142586620E0035547B /* DetailViewControllerTests.swift */,
@@ -566,6 +569,7 @@
 				52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */,
 				52562B3D258499FE006FF4CA /* UnsplashListServiceTests.swift in Sources */,
 				52562B2E2583B371006FF4CA /* UnsplashServiceStub.swift in Sources */,
+				52F528CB25885D9600C7B88C /* ListViewControllerTests.swift in Sources */,
 				52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */,
 				52562B7D258528EF006FF4CA /* MockURLSessionDataTask.swift in Sources */,
 				52CD56A02583342100DA6387 /* ListViewCellTests.swift in Sources */,
