@@ -128,4 +128,16 @@ class StickyHeaderViewTests: XCTestCase {
         
         XCTAssertNil(imageView.image)
     }
+    
+    
+    func testHitTest_WhenToucchedSearchBar_ThenReturnSearBarTextField() {
+        let result = sut.hitTest(CGPoint(x: 100, y: 190), with: nil)
+        XCTAssertEqual(result, sut.searchBar)
+    }
+    
+    
+    func testHitTest_WhenToucchedNotSearchBar_ThenReturnNotSearBarTextField() {
+        let result = sut.hitTest(CGPoint(x: 100, y: 50), with: nil)
+        XCTAssertNil(result)
+    }
 }

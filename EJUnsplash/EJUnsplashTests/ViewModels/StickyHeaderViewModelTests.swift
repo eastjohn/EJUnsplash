@@ -109,7 +109,7 @@ class StickyHeaderViewModelTests: XCTestCase {
 
         givenHasPhotoDatas()
         
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 2)
         
         return result
     }
