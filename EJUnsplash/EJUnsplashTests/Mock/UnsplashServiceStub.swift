@@ -10,9 +10,9 @@ import Foundation
 
 class UnsplashServiceStub: UnsplashService {
     var wasCalled = ""
-    var updateHandler: ( ([PhotoInfo])->() )?
+    var updateHandler: ( (Result<[PhotoInfo], Error>)->() )?
     
-    func addBindingUpdateDatas(updateHandler: @escaping ([PhotoInfo]) -> ()) {
+    func addBindingUpdateDatas(updateHandler: @escaping (Result<[PhotoInfo], Error>) -> ()) {
         wasCalled += "called \(#function)"
         self.updateHandler = updateHandler
     }

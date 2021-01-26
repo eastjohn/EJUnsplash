@@ -36,7 +36,7 @@ class UnsplashRandomServiceTests: XCTestCase {
             wasCalled = true
         }
         
-        sut.updateHandler?([PhotoInfo(name: "", url: nil, size: CGSize())])
+        sut.updateHandler?(.success([PhotoInfo(name: "", url: nil, size: CGSize())]) )
         
         XCTAssertTrue(wasCalled)
     }
@@ -77,9 +77,9 @@ class UnsplashRandomServiceTests: XCTestCase {
     }
     
     
-    func whenFetchData(jsonData: Data?) {
+    func whenFetchData(jsonData: Data?, error: Error? = nil) {
         sut.fetchDatas()
-        networkManagerStub.completionHandler?(jsonData, nil)
+        networkManagerStub.completionHandler?(jsonData, error)
     }
     
     
@@ -92,14 +92,46 @@ class UnsplashRandomServiceTests: XCTestCase {
     func testReceiveData_ThenCallUpdateHandler() {
         let expectedPhotoData = PhotoInfo(name: "Test", url: URL(string: "https://images.unsplash.com/photo1"), size: CGSize(width: 100, height: 200))
         var result: [PhotoInfo]? = nil
-        sut.addBindingUpdateDatas { photoInfos in
-            result = photoInfos
+        sut.addBindingUpdateDatas { photoResult in
+            if case .success(let photoInfos) = photoResult {
+                result = photoInfos
+            }
         }
         
         let jsonData = JsonDataCreator.createHasOneData()
         whenFetchData(jsonData: jsonData)
         
         XCTAssertEqual(result, [expectedPhotoData])
+    }
+    
+    
+    func testReceiveDataWithError_ThenCallCompletionHandlerWithError() {
+        let expectedError = ServiceError.unknown
+        var errorResult: ServiceError? = nil
+        sut.addBindingUpdateDatas { result in
+            if case .failure(let error) = result {
+                errorResult = error as? ServiceError
+            }
+        }
+        
+        whenFetchData(jsonData: nil, error: expectedError)
+        
+        XCTAssertEqual(expectedError, errorResult)
+    }
+    
+    
+    func testReceiveDataWithInvalidJsonData_ThenCallCompletionHandlerWithInvalidJsonError() {
+        let expectedError = ServiceError.invalidJson
+        var errorResult: ServiceError? = nil
+        sut.addBindingUpdateDatas { result in
+            if case .failure(let error) = result {
+                errorResult = error as? ServiceError
+            }
+        }
+        
+        whenFetchData(jsonData: Data())
+        
+        XCTAssertEqual(expectedError, errorResult)
     }
 
 }

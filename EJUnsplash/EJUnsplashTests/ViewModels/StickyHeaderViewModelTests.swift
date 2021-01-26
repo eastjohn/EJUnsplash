@@ -47,7 +47,7 @@ class StickyHeaderViewModelTests: XCTestCase {
     func testBindingService_WhenCreated() {
         let expectedPhotoInfo = PhotoInfo(name: "test2", url: nil, size: CGSize())
         
-        unsplashServiceStub.updateHandler?([expectedPhotoInfo])
+        unsplashServiceStub.updateHandler?(.success([expectedPhotoInfo]))
         
         XCTAssertEqual(sut.photoDatas[0], expectedPhotoInfo)
     }
@@ -84,7 +84,7 @@ class StickyHeaderViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         DispatchQueue.global().async {
-            self.unsplashServiceStub.updateHandler?([PhotoInfo(name: "test1", url: URL(string: "http://test1.com"), size: CGSize())])
+            self.unsplashServiceStub.updateHandler?(.success([PhotoInfo(name: "test1", url: URL(string: "http://test1.com"), size: CGSize())]))
         }
         
         wait(for: [expectation], timeout: 1)

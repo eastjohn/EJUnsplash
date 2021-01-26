@@ -36,7 +36,7 @@ class UnsplashSearchServiceTests: XCTestCase {
             wasCalled = true
         }
         
-        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
+        sut.updateHandlers.forEach { $0(.success([PhotoInfo(name: "", url: nil, size: CGSize())])) }
         
         XCTAssertEqual(sut.updateHandlers.count, 1)
         XCTAssertTrue(wasCalled)
@@ -53,7 +53,7 @@ class UnsplashSearchServiceTests: XCTestCase {
             calledCount += 1
         }
         
-        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
+        sut.updateHandlers.forEach { $0(.success([PhotoInfo(name: "", url: nil, size: CGSize())])) }
         
         XCTAssertEqual(sut.updateHandlers.count, 2)
         XCTAssertEqual(calledCount, 2)
@@ -71,7 +71,7 @@ class UnsplashSearchServiceTests: XCTestCase {
         
         
         sut.removeBindingUpdateDatas()
-        sut.updateHandlers.forEach { $0([PhotoInfo(name: "", url: nil, size: CGSize())]) }
+        sut.updateHandlers.forEach { $0(.success([PhotoInfo(name: "", url: nil, size: CGSize())])) }
         
         
         XCTAssertEqual(sut.updateHandlers.count, 1)
@@ -204,10 +204,10 @@ class UnsplashSearchServiceTests: XCTestCase {
     }
     
     
-    func whenFetchData(jsonData: Data?) {
+    func whenFetchData(jsonData: Data?, error: Error? = nil) {
         sut.query = "test"
         sut.fetchDatas()
-        networkManagerStub.completionHandler?(jsonData, nil)
+        networkManagerStub.completionHandler?(jsonData, error)
     }
     
     
@@ -220,8 +220,10 @@ class UnsplashSearchServiceTests: XCTestCase {
     func testReceiveData_ThenCallUpdateHandler() {
         let expectedPhotoData = PhotoInfo(name: "Test", url: URL(string: "https://images.unsplash.com/photo1"), size: CGSize(width: 100, height: 200))
         var result: [PhotoInfo]? = nil
-        sut.addBindingUpdateDatas { photoInfos in
-            result = photoInfos
+        sut.addBindingUpdateDatas { photoResult in
+            if case .success(let photoInfos) = photoResult {
+                result = photoInfos
+            }
         }
         
         let jsonData = JsonDataCreator.createHasOneSearchData()
@@ -233,8 +235,10 @@ class UnsplashSearchServiceTests: XCTestCase {
     
     func testReceiveData_WhenHasTenDatas_ThenCallUpdateHandler() {
         var result: [PhotoInfo]? = nil
-        sut.addBindingUpdateDatas { photoInfos in
-            result = photoInfos
+        sut.addBindingUpdateDatas { photoResult in
+            if case .success(let photoInfos) = photoResult {
+                result = photoInfos
+            }
         }
 
         whenFetchData(jsonFile: "Search1.json")
@@ -292,9 +296,39 @@ class UnsplashSearchServiceTests: XCTestCase {
     func testReceiveDataWithError_ThenNotIncreaseCurrentPage() {
         let expectedCurrentPage = sut.currentPage
         
-        whenFetchData(jsonData: nil)
+        whenFetchData(jsonData: nil, error: ServiceError.unknown)
         
         XCTAssertEqual(sut.currentPage, expectedCurrentPage)
+    }
+    
+    
+    func testReceiveDataWithError_ThenCallCompletionHandlerWithError() {
+        let expectedError = ServiceError.unknown
+        var errorResult: ServiceError? = nil
+        sut.addBindingUpdateDatas { result in
+            if case .failure(let error) = result {
+                errorResult = error as? ServiceError
+            }
+        }
+        
+        whenFetchData(jsonData: nil, error: expectedError)
+        
+        XCTAssertEqual(expectedError, errorResult)
+    }
+    
+    
+    func testReceiveDataWithInvalidJsonData_ThenCallCompletionHandlerWithInvalidJsonError() {
+        let expectedError = ServiceError.invalidJson
+        var errorResult: ServiceError? = nil
+        sut.addBindingUpdateDatas { result in
+            if case .failure(let error) = result {
+                errorResult = error as? ServiceError
+            }
+        }
+        
+        whenFetchData(jsonData: Data())
+        
+        XCTAssertEqual(expectedError, errorResult)
     }
     
     

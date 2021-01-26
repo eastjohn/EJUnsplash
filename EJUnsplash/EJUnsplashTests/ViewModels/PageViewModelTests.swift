@@ -44,7 +44,7 @@ class PageViewModelTests: XCTestCase {
         let expectedPhotoInfo = PhotoInfo(name: "test2", url: nil, size: CGSize())
         sut.photoDatas = [PhotoInfo(name: "test1", url: nil, size: CGSize())]
         
-        unsplashServiceStub.updateHandler?([expectedPhotoInfo])
+        unsplashServiceStub.updateHandler?(.success([expectedPhotoInfo]))
         
         XCTAssertEqual(sut.photoDatas[1], expectedPhotoInfo)
     }

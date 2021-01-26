@@ -63,6 +63,7 @@
 		52AA34B92582683B00A61F23 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */; };
 		52AA34C225826F2000A61F23 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */; };
 		52AA34CD25827C9900A61F23 /* StickyHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */; };
+		52B9FCD525C00C5800375985 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9FCD425C00C5800375985 /* ServiceError.swift */; };
 		52CD56772582FBB300DA6387 /* StickyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */; };
 		52CD56812583014B00DA6387 /* StickyHeaderViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */; };
 		52CD5689258312AA00DA6387 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5688258312AA00DA6387 /* ListViewModel.swift */; };
@@ -151,6 +152,7 @@
 		52AA34B82582683B00A61F23 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		52AA34C125826F1F00A61F23 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		52AA34CC25827C9900A61F23 /* StickyHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewTests.swift; sourceTree = "<group>"; };
+		52B9FCD425C00C5800375985 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		52CD56762582FBB300DA6387 /* StickyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModel.swift; sourceTree = "<group>"; };
 		52CD56802583014B00DA6387 /* StickyHeaderViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewModelStub.swift; sourceTree = "<group>"; };
 		52CD5688258312AA00DA6387 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				52562B482584A57E006FF4CA /* UnsplashRequest.swift */,
 				52562B4C2584A694006FF4CA /* UnsplashAPI.swift */,
 				52A21FDA2585CC870035547B /* ImageCacheManager.swift */,
+				52B9FCD425C00C5800375985 /* ServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				52F528AF258736E100C7B88C /* SearchViewController.swift in Sources */,
 				52A220192586632F0035547B /* DetailViewModel.swift in Sources */,
 				52CD569525831ED200DA6387 /* ListViewCell.swift in Sources */,
+				52B9FCD525C00C5800375985 /* ServiceError.swift in Sources */,
 				52AA3472258264E300A61F23 /* AppDelegate.swift in Sources */,
 				52562B242583B2BE006FF4CA /* UnsplashService.swift in Sources */,
 				52562B492584A57E006FF4CA /* UnsplashRequest.swift in Sources */,

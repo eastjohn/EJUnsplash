@@ -28,8 +28,13 @@ class StickyHeaderViewModel : IStickyHeaderViewModel {
     
     init(service: UnsplashService) {
         unsplashService = service
-        unsplashService.addBindingUpdateDatas { [weak self] photoInfos in
-            self?.photoDatas = photoInfos
+        unsplashService.addBindingUpdateDatas { [weak self] result in
+            switch result {
+            case .success(let photoInfos):
+                self?.photoDatas = photoInfos
+            case .failure(let error):
+                print(error)
+            }            
         }
     }
     

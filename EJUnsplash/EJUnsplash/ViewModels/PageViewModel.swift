@@ -19,8 +19,14 @@ class PageViewModel: IPageViewModel {
     
     init(service: UnsplashService) {
         unsplashService = service
-        unsplashService.addBindingUpdateDatas { [weak self] photoDatas in
-            self?.photoDatas.append(contentsOf: photoDatas)
+        unsplashService.addBindingUpdateDatas { [weak self] result in
+            switch result {
+            case .success(let photoDatas):
+                self?.photoDatas.append(contentsOf: photoDatas)
+            case .failure(let error):
+                print(error)
+            }
+            
         }
     }
     

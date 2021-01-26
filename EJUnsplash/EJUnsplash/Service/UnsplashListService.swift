@@ -8,7 +8,7 @@
 import UIKit
 
 class UnsplashListService: UnsplashService {
-    var updateHandlers = [([PhotoInfo])->()]()
+    var updateHandlers = [(Result<[PhotoInfo], Error>)->()]()
     var networkManager: INetworkManager = NetworkManager()
     
     var currentPage = 0
@@ -17,7 +17,7 @@ class UnsplashListService: UnsplashService {
     var isFetching = false
     var canFetch = true
     
-    func addBindingUpdateDatas(updateHandler: @escaping ([PhotoInfo]) -> ()) {
+    func addBindingUpdateDatas(updateHandler: @escaping (Result<[PhotoInfo], Error>) -> ()) {
         updateHandlers.append(updateHandler)
     }
     
@@ -36,7 +36,12 @@ class UnsplashListService: UnsplashService {
                                         .per_page: "\(perPage)"])
         
         networkManager.sendRequest(request) { [weak self] data, error in
-            self?.receiveData(data)
+            self?.isFetching = false
+            if let error = error {
+                self?.receiveError(error)
+            } else {
+                self?.receiveData(data)
+            }
         }
     }
     
@@ -45,12 +50,23 @@ class UnsplashListService: UnsplashService {
     }
     
     
+    private func receiveError(_ error: Error) {
+        updateHandlers.forEach { handler in
+            handler(.failure(error))
+        }
+    }
+    
+    
     private func receiveData(_ data: Data?) {
-        isFetching = false
         guard let data = data else { return }
-        guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]] else { return }
+        guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]] else {
+            updateHandlers.forEach { handler in
+                handler(.failure(ServiceError.invalidJson))
+            }
+            return
+        }
         
-        let phothDatas: [PhotoInfo] = jsonData.compactMap {
+        let phothDatas = jsonData.compactMap {
             PhotoInfoFactory.createPhotoInfo(jsonDic: $0)
         }
         
@@ -60,7 +76,7 @@ class UnsplashListService: UnsplashService {
         currentPage += 1
         
         updateHandlers.forEach { handler in
-            handler(phothDatas)
+            handler(.success(phothDatas))
         }
     }
 }
